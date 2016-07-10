@@ -9,6 +9,7 @@ Also we are going to implement demand prediction based on historical data.
 *  Get real time status of available Bikes/Docks
 *  Get weather information
 *  Search places on google maps to get bike status status
+* Suggest new Bike Stations
 
 ### How do I get set up? ###
 
