@@ -1,0 +1,845 @@
+[{
+        "station_name": "San Antonio Shopping Center",
+        "starting_trips": 0,
+        "ending_trips": -1
+      }, {
+        "station_name": "Mezes Park",
+        "starting_trips": 0,
+        "ending_trips": -1
+      }, {
+        "station_name": "San Antonio Caltrain Station",
+        "starting_trips": 0,
+        "ending_trips": -1
+      }, {
+        "station_name": "Stanford in Redwood City",
+        "starting_trips": 0,
+        "ending_trips": -1
+      }, {
+        "station_name": "San Francisco City Hall",
+        "starting_trips": 2052,
+        "ending_trips": -1627
+      }, {
+        "station_name": "Washington at Kearny",
+        "starting_trips": 2660,
+        "ending_trips": -3481
+      }, {
+        "station_name": "Golden Gate at Polk",
+        "starting_trips": 3646,
+        "ending_trips": -2852
+      }, {
+        "station_name": "Post at Kearny",
+        "starting_trips": 4705,
+        "ending_trips": -4803
+      }, {
+        "station_name": "Embarcadero at Vallejo",
+        "starting_trips": 5037,
+        "ending_trips": -6146
+      }, {
+        "station_name": "Clay at Battery",
+        "starting_trips": 5040,
+        "ending_trips": -5068
+      }, {
+        "station_name": "Davis at Jackson",
+        "starting_trips": 5094,
+        "ending_trips": -5182
+      }, {
+        "station_name": "Yerba Buena Center of the Arts (3rd @ Howard)",
+        "starting_trips": 5523,
+        "ending_trips": -6288
+      }, {
+        "station_name": "Spear at Folsom",
+        "starting_trips": 5574,
+        "ending_trips": -4991
+      }, {
+        "station_name": "South Van Ness at Market",
+        "starting_trips": 5876,
+        "ending_trips": -4879
+      }, {
+        "station_name": "Commercial at Montgomery",
+        "starting_trips": 6014,
+        "ending_trips": -5821
+      }, {
+        "station_name": "Mechanics Plaza (Market at Battery)",
+        "starting_trips": 6131,
+        "ending_trips": -6262
+      }, {
+        "station_name": "Powell at Post (Union Square)",
+        "starting_trips": 6425,
+        "ending_trips": -4134
+      }, {
+        "station_name": "Howard at 2nd",
+        "starting_trips": 6660,
+        "ending_trips": -7273
+      }, {
+        "station_name": "Embarcadero at Bryant",
+        "starting_trips": 7483,
+        "ending_trips": -6687
+      }, {
+        "station_name": "Embarcadero at Folsom",
+        "starting_trips": 7596,
+        "ending_trips": -7229
+      }, {
+        "station_name": "Broadway St at Battery St",
+        "starting_trips": 7676,
+        "ending_trips": -7159
+      }, {
+        "station_name": "5th at Howard",
+        "starting_trips": 7708,
+        "ending_trips": -8147
+      }, {
+        "station_name": "Civic Center BART (7th at Market)",
+        "starting_trips": 7760,
+        "ending_trips": -7714
+      }, {
+        "station_name": "2nd at Folsom",
+        "starting_trips": 7999,
+        "ending_trips": -4727
+      }, {
+        "station_name": "Grant Avenue at Columbus Avenue",
+        "starting_trips": 8337,
+        "ending_trips": -4319
+      }, {
+        "station_name": "Beale at Market",
+        "starting_trips": 8359,
+        "ending_trips": -6330
+      }, {
+        "station_name": "2nd at South Park",
+        "starting_trips": 9469,
+        "ending_trips": -8253
+      }, {
+        "station_name": "Powell Street BART",
+        "starting_trips": 9695,
+        "ending_trips": -10239
+      }, {
+        "station_name": "Market at 4th",
+        "starting_trips": 9894,
+        "ending_trips": -9682
+      }, {
+        "station_name": "Market at Sansome",
+        "starting_trips": 11431,
+        "ending_trips": -13916
+      }, {
+        "station_name": "Market at 10th",
+        "starting_trips": 11885,
+        "ending_trips": -10220
+      }, {
+        "station_name": "Steuart at Market",
+        "starting_trips": 13687,
+        "ending_trips": -13617
+      }, {
+        "station_name": "Townsend at 7th",
+        "starting_trips": 13752,
+        "ending_trips": -15422
+      }, {
+        "station_name": "2nd at Townsend",
+        "starting_trips": 14026,
+        "ending_trips": -15463
+      }, {
+        "station_name": "Embarcadero at Sansome",
+        "starting_trips": 14158,
+        "ending_trips": -15065
+      }, {
+        "station_name": "Temporary Transbay Terminal (Howard at Beale)",
+        "starting_trips": 14436,
+        "ending_trips": -12966
+      }, {
+        "station_name": "Harry Bridges Plaza (Ferry Building)",
+        "starting_trips": 17255,
+        "ending_trips": -17810
+      }, {
+        "station_name": "San Francisco Caltrain 2 (330 Townsend)",
+        "starting_trips": 21758,
+        "ending_trips": -22523
+      }, {
+        "station_name": "San Francisco Caltrain (Townsend at 4th)",
+        "starting_trips": 26304,
+        "ending_trips": -34806
+      }, {
+        "station_name": "Mountain View Caltrain Station",
+        "starting_trips": 0,
+        "ending_trips": -6
+      }, {
+        "station_name": "Market at 4th",
+        "starting_trips": 0,
+        "ending_trips": -1
+      }, {
+        "station_name": "SJSU 4th at San Carlos",
+        "starting_trips": 475,
+        "ending_trips": -647
+      }, {
+        "station_name": "SJSU - San Salvador at 9th",
+        "starting_trips": 494,
+        "ending_trips": -445
+      }, {
+        "station_name": "San Salvador at 1st",
+        "starting_trips": 495,
+        "ending_trips": -547
+      }, {
+        "station_name": "Santa Clara County Civic Center",
+        "starting_trips": 534,
+        "ending_trips": -486
+      }, {
+        "station_name": "Adobe on Almaden",
+        "starting_trips": 562,
+        "ending_trips": -490
+      }, {
+        "station_name": "Arena Green / SAP Center",
+        "starting_trips": 647,
+        "ending_trips": -620
+      }, {
+        "station_name": "San Jose Civic Center",
+        "starting_trips": 774,
+        "ending_trips": -908
+      }, {
+        "station_name": "San Jose City Hall",
+        "starting_trips": 832,
+        "ending_trips": -671
+      }, {
+        "station_name": "St James Park",
+        "starting_trips": 839,
+        "ending_trips": -729
+      }, {
+        "station_name": "Paseo de San Antonio",
+        "starting_trips": 856,
+        "ending_trips": -1073
+      }, {
+        "station_name": "Japantown",
+        "starting_trips": 885,
+        "ending_trips": -975
+      }, {
+        "station_name": "MLK Library",
+        "starting_trips": 1099,
+        "ending_trips": -960
+      }, {
+        "station_name": "Ryland Park",
+        "starting_trips": 1120,
+        "ending_trips": -880
+      }, {
+        "station_name": "San Pedro Square",
+        "starting_trips": 1418,
+        "ending_trips": -1595
+      }, {
+        "station_name": "Santa Clara at Almaden",
+        "starting_trips": 1958,
+        "ending_trips": -1878
+      }, {
+        "station_name": "San Jose Diridon Caltrain Station",
+        "starting_trips": 4968,
+        "ending_trips": -5045
+      }, {
+        "station_name": "Mountain View Caltrain Station",
+        "starting_trips": 0,
+        "ending_trips": -6
+      }, {
+        "station_name": "Market at 4th",
+        "starting_trips": 0,
+        "ending_trips": -1
+      }, {
+        "station_name": "SJSU 4th at San Carlos",
+        "starting_trips": 475,
+        "ending_trips": -647
+      }, {
+        "station_name": "SJSU - San Salvador at 9th",
+        "starting_trips": 494,
+        "ending_trips": -445
+      }, {
+        "station_name": "San Salvador at 1st",
+        "starting_trips": 495,
+        "ending_trips": -547
+      }, {
+        "station_name": "Santa Clara County Civic Center",
+        "starting_trips": 534,
+        "ending_trips": -486
+      }, {
+        "station_name": "Adobe on Almaden",
+        "starting_trips": 562,
+        "ending_trips": -490
+      }, {
+        "station_name": "Arena Green / SAP Center",
+        "starting_trips": 647,
+        "ending_trips": -620
+      }, {
+        "station_name": "San Jose Civic Center",
+        "starting_trips": 774,
+        "ending_trips": -908
+      }, {
+        "station_name": "San Jose City Hall",
+        "starting_trips": 832,
+        "ending_trips": -671
+      }, {
+        "station_name": "St James Park",
+        "starting_trips": 839,
+        "ending_trips": -729
+      }, {
+        "station_name": "Paseo de San Antonio",
+        "starting_trips": 856,
+        "ending_trips": -1073
+      }, {
+        "station_name": "Japantown",
+        "starting_trips": 885,
+        "ending_trips": -975
+      }, {
+        "station_name": "MLK Library",
+        "starting_trips": 1099,
+        "ending_trips": -960
+      }, {
+        "station_name": "Ryland Park",
+        "starting_trips": 1120,
+        "ending_trips": -880
+      }, {
+        "station_name": "San Pedro Square",
+        "starting_trips": 1418,
+        "ending_trips": -1595
+      }, {
+        "station_name": "Santa Clara at Almaden",
+        "starting_trips": 1958,
+        "ending_trips": -1878
+      }, {
+        "station_name": "San Jose Diridon Caltrain Station",
+        "starting_trips": 4968,
+        "ending_trips": -5045
+      },{
+        "station_name": "Franklin at Maple",
+        "starting_trips": 0,
+        "ending_trips": -4
+      }, {
+        "station_name": "Mountain View Caltrain Station",
+        "starting_trips": 0,
+        "ending_trips": -29
+      }, {
+        "station_name": "Mountain View City Hall",
+        "starting_trips": 0,
+        "ending_trips": -4
+      }, {
+        "station_name": "Redwood City Caltrain Station",
+        "starting_trips": 0,
+        "ending_trips": -5
+      }, {
+        "station_name": "Redwood City Public Library",
+        "starting_trips": 0,
+        "ending_trips": -3
+      }, {
+        "station_name": "Rengstorff Avenue / California Street",
+        "starting_trips": 0,
+        "ending_trips": -17
+      }, {
+        "station_name": "San Antonio Caltrain Station",
+        "starting_trips": 0,
+        "ending_trips": -54
+      }, {
+        "station_name": "San Antonio Shopping Center",
+        "starting_trips": 0,
+        "ending_trips": -74
+      }, {
+        "station_name": "Stanford in Redwood City",
+        "starting_trips": 0,
+        "ending_trips": -22
+      }, {
+        "station_name": "Castro Street and El Camino Real",
+        "starting_trips": 0,
+        "ending_trips": -3
+      }, {
+        "station_name": "San Francisco Caltrain (Townsend at 4th)",
+        "starting_trips": 0,
+        "ending_trips": -4
+      }, {
+        "station_name": "San Mateo County Center",
+        "starting_trips": 0,
+        "ending_trips": -2
+      }, {
+        "station_name": "Evelyn Park and Ride",
+        "starting_trips": 0,
+        "ending_trips": -1
+      }, {
+        "station_name": "Park at Olive",
+        "starting_trips": 376,
+        "ending_trips": -361
+      }, {
+        "station_name": "California Ave Caltrain Station",
+        "starting_trips": 400,
+        "ending_trips": -448
+      }, {
+        "station_name": "Cowper at University",
+        "starting_trips": 576,
+        "ending_trips": -569
+      }, {
+        "station_name": "University and Emerson",
+        "starting_trips": 605,
+        "ending_trips": -628
+      }, {
+        "station_name": "Palo Alto Caltrain Station",
+        "starting_trips": 1116,
+        "ending_trips": -845
+      }, {
+        "station_name": "Mountain View Caltrain Station",
+        "starting_trips": 0,
+        "ending_trips": -6
+      }, {
+        "station_name": "Market at 4th",
+        "starting_trips": 0,
+        "ending_trips": -1
+      }, {
+        "station_name": "SJSU 4th at San Carlos",
+        "starting_trips": 475,
+        "ending_trips": -647
+      }, {
+        "station_name": "SJSU - San Salvador at 9th",
+        "starting_trips": 494,
+        "ending_trips": -445
+      }, {
+        "station_name": "San Salvador at 1st",
+        "starting_trips": 495,
+        "ending_trips": -547
+      }, {
+        "station_name": "Santa Clara County Civic Center",
+        "starting_trips": 534,
+        "ending_trips": -486
+      }, {
+        "station_name": "Adobe on Almaden",
+        "starting_trips": 562,
+        "ending_trips": -490
+      }, {
+        "station_name": "Arena Green / SAP Center",
+        "starting_trips": 647,
+        "ending_trips": -620
+      }, {
+        "station_name": "San Jose Civic Center",
+        "starting_trips": 774,
+        "ending_trips": -908
+      }, {
+        "station_name": "San Jose City Hall",
+        "starting_trips": 832,
+        "ending_trips": -671
+      }, {
+        "station_name": "St James Park",
+        "starting_trips": 839,
+        "ending_trips": -729
+      }, {
+        "station_name": "Paseo de San Antonio",
+        "starting_trips": 856,
+        "ending_trips": -1073
+      }, {
+        "station_name": "Japantown",
+        "starting_trips": 885,
+        "ending_trips": -975
+      }, {
+        "station_name": "MLK Library",
+        "starting_trips": 1099,
+        "ending_trips": -960
+      }, {
+        "station_name": "Ryland Park",
+        "starting_trips": 1120,
+        "ending_trips": -880
+      }, {
+        "station_name": "San Pedro Square",
+        "starting_trips": 1418,
+        "ending_trips": -1595
+      }, {
+        "station_name": "Santa Clara at Almaden",
+        "starting_trips": 1958,
+        "ending_trips": -1878
+      }, {
+        "station_name": "San Jose Diridon Caltrain Station",
+        "starting_trips": 4968,
+        "ending_trips": -5045
+      },{
+        "station_name": "Franklin at Maple",
+        "starting_trips": 0,
+        "ending_trips": -4
+      }, {
+        "station_name": "Mountain View Caltrain Station",
+        "starting_trips": 0,
+        "ending_trips": -29
+      }, {
+        "station_name": "Mountain View City Hall",
+        "starting_trips": 0,
+        "ending_trips": -4
+      }, {
+        "station_name": "Redwood City Caltrain Station",
+        "starting_trips": 0,
+        "ending_trips": -5
+      }, {
+        "station_name": "Redwood City Public Library",
+        "starting_trips": 0,
+        "ending_trips": -3
+      }, {
+        "station_name": "Rengstorff Avenue / California Street",
+        "starting_trips": 0,
+        "ending_trips": -17
+      }, {
+        "station_name": "San Antonio Caltrain Station",
+        "starting_trips": 0,
+        "ending_trips": -54
+      }, {
+        "station_name": "San Antonio Shopping Center",
+        "starting_trips": 0,
+        "ending_trips": -74
+      }, {
+        "station_name": "Stanford in Redwood City",
+        "starting_trips": 0,
+        "ending_trips": -22
+      }, {
+        "station_name": "Castro Street and El Camino Real",
+        "starting_trips": 0,
+        "ending_trips": -3
+      }, {
+        "station_name": "San Francisco Caltrain (Townsend at 4th)",
+        "starting_trips": 0,
+        "ending_trips": -4
+      }, {
+        "station_name": "San Mateo County Center",
+        "starting_trips": 0,
+        "ending_trips": -2
+      }, {
+        "station_name": "Evelyn Park and Ride",
+        "starting_trips": 0,
+        "ending_trips": -1
+      }, {
+        "station_name": "Park at Olive",
+        "starting_trips": 376,
+        "ending_trips": -361
+      }, {
+        "station_name": "California Ave Caltrain Station",
+        "starting_trips": 400,
+        "ending_trips": -448
+      }, {
+        "station_name": "Cowper at University",
+        "starting_trips": 576,
+        "ending_trips": -569
+      }, {
+        "station_name": "University and Emerson",
+        "starting_trips": 605,
+        "ending_trips": -628
+      }, {
+        "station_name": "Palo Alto Caltrain Station",
+        "starting_trips": 1116,
+        "ending_trips": -845
+      },{
+          "station_name": "Cowper at University",
+          "starting_trips": 0,
+          "ending_trips": -4
+        }, {
+          "station_name": "Palo Alto Caltrain Station",
+          "starting_trips": 0,
+          "ending_trips": -39
+        }, {
+          "station_name": "University and Emerson",
+          "starting_trips": 0,
+          "ending_trips": -15
+        }, {
+          "station_name": "California Ave Caltrain Station",
+          "starting_trips": 0,
+          "ending_trips": -3
+        }, {
+          "station_name": "Mountain View Caltrain Station",
+          "starting_trips": 0,
+          "ending_trips": -1
+        }, {
+          "station_name": "Park at Olive",
+          "starting_trips": 0,
+          "ending_trips": -3
+        }, {
+          "station_name": "Franklin at Maple",
+          "starting_trips": 81,
+          "ending_trips": -95
+        }, {
+          "station_name": "Redwood City Public Library",
+          "starting_trips": 118,
+          "ending_trips": -95
+        }, {
+          "station_name": "San Mateo County Center",
+          "starting_trips": 127,
+          "ending_trips": -185
+        }, {
+          "station_name": "Redwood City Medical Center",
+          "starting_trips": 150,
+          "ending_trips": -230
+        }, {
+          "station_name": "Mezes Park",
+          "starting_trips": 212,
+          "ending_trips": -144
+        }, {
+          "station_name": "Stanford in Redwood City",
+          "starting_trips": 436,
+          "ending_trips": -411
+        }, {
+          "station_name": "Redwood City Caltrain Station",
+          "starting_trips": 895,
+          "ending_trips": -794
+        },{
+          "station_name": "Mountain View Caltrain Station",
+          "starting_trips": 0,
+          "ending_trips": -6
+        }, {
+          "station_name": "Market at 4th",
+          "starting_trips": 0,
+          "ending_trips": -1
+        }, {
+          "station_name": "SJSU 4th at San Carlos",
+          "starting_trips": 475,
+          "ending_trips": -647
+        }, {
+          "station_name": "SJSU - San Salvador at 9th",
+          "starting_trips": 494,
+          "ending_trips": -445
+        }, {
+          "station_name": "San Salvador at 1st",
+          "starting_trips": 495,
+          "ending_trips": -547
+        }, {
+          "station_name": "Santa Clara County Civic Center",
+          "starting_trips": 534,
+          "ending_trips": -486
+        }, {
+          "station_name": "Adobe on Almaden",
+          "starting_trips": 562,
+          "ending_trips": -490
+        }, {
+          "station_name": "Arena Green / SAP Center",
+          "starting_trips": 647,
+          "ending_trips": -620
+        }, {
+          "station_name": "San Jose Civic Center",
+          "starting_trips": 774,
+          "ending_trips": -908
+        }, {
+          "station_name": "San Jose City Hall",
+          "starting_trips": 832,
+          "ending_trips": -671
+        }, {
+          "station_name": "St James Park",
+          "starting_trips": 839,
+          "ending_trips": -729
+        }, {
+          "station_name": "Paseo de San Antonio",
+          "starting_trips": 856,
+          "ending_trips": -1073
+        }, {
+          "station_name": "Japantown",
+          "starting_trips": 885,
+          "ending_trips": -975
+        }, {
+          "station_name": "MLK Library",
+          "starting_trips": 1099,
+          "ending_trips": -960
+        }, {
+          "station_name": "Ryland Park",
+          "starting_trips": 1120,
+          "ending_trips": -880
+        }, {
+          "station_name": "San Pedro Square",
+          "starting_trips": 1418,
+          "ending_trips": -1595
+        }, {
+          "station_name": "Santa Clara at Almaden",
+          "starting_trips": 1958,
+          "ending_trips": -1878
+        }, {
+          "station_name": "San Jose Diridon Caltrain Station",
+          "starting_trips": 4968,
+          "ending_trips": -5045
+        },{
+          "station_name": "Franklin at Maple",
+          "starting_trips": 0,
+          "ending_trips": -4
+        }, {
+          "station_name": "Mountain View Caltrain Station",
+          "starting_trips": 0,
+          "ending_trips": -29
+        }, {
+          "station_name": "Mountain View City Hall",
+          "starting_trips": 0,
+          "ending_trips": -4
+        }, {
+          "station_name": "Redwood City Caltrain Station",
+          "starting_trips": 0,
+          "ending_trips": -5
+        }, {
+          "station_name": "Redwood City Public Library",
+          "starting_trips": 0,
+          "ending_trips": -3
+        }, {
+          "station_name": "Rengstorff Avenue / California Street",
+          "starting_trips": 0,
+          "ending_trips": -17
+        }, {
+          "station_name": "San Antonio Caltrain Station",
+          "starting_trips": 0,
+          "ending_trips": -54
+        }, {
+          "station_name": "San Antonio Shopping Center",
+          "starting_trips": 0,
+          "ending_trips": -74
+        }, {
+          "station_name": "Stanford in Redwood City",
+          "starting_trips": 0,
+          "ending_trips": -22
+        }, {
+          "station_name": "Castro Street and El Camino Real",
+          "starting_trips": 0,
+          "ending_trips": -3
+        }, {
+          "station_name": "San Francisco Caltrain (Townsend at 4th)",
+          "starting_trips": 0,
+          "ending_trips": -4
+        }, {
+          "station_name": "San Mateo County Center",
+          "starting_trips": 0,
+          "ending_trips": -2
+        }, {
+          "station_name": "Evelyn Park and Ride",
+          "starting_trips": 0,
+          "ending_trips": -1
+        }, {
+          "station_name": "Park at Olive",
+          "starting_trips": 376,
+          "ending_trips": -361
+        }, {
+          "station_name": "California Ave Caltrain Station",
+          "starting_trips": 400,
+          "ending_trips": -448
+        }, {
+          "station_name": "Cowper at University",
+          "starting_trips": 576,
+          "ending_trips": -569
+        }, {
+          "station_name": "University and Emerson",
+          "starting_trips": 605,
+          "ending_trips": -628
+        }, {
+          "station_name": "Palo Alto Caltrain Station",
+          "starting_trips": 1116,
+          "ending_trips": -845
+        },{
+          "station_name": "Cowper at University",
+          "starting_trips": 0,
+          "ending_trips": -4
+        }, {
+          "station_name": "Palo Alto Caltrain Station",
+          "starting_trips": 0,
+          "ending_trips": -39
+        }, {
+          "station_name": "University and Emerson",
+          "starting_trips": 0,
+          "ending_trips": -15
+        }, {
+          "station_name": "California Ave Caltrain Station",
+          "starting_trips": 0,
+          "ending_trips": -3
+        }, {
+          "station_name": "Mountain View Caltrain Station",
+          "starting_trips": 0,
+          "ending_trips": -1
+        }, {
+          "station_name": "Park at Olive",
+          "starting_trips": 0,
+          "ending_trips": -3
+        }, {
+          "station_name": "Franklin at Maple",
+          "starting_trips": 81,
+          "ending_trips": -95
+        }, {
+          "station_name": "Redwood City Public Library",
+          "starting_trips": 118,
+          "ending_trips": -95
+        }, {
+          "station_name": "San Mateo County Center",
+          "starting_trips": 127,
+          "ending_trips": -185
+        }, {
+          "station_name": "Redwood City Medical Center",
+          "starting_trips": 150,
+          "ending_trips": -230
+        }, {
+          "station_name": "Mezes Park",
+          "starting_trips": 212,
+          "ending_trips": -144
+        }, {
+          "station_name": "Stanford in Redwood City",
+          "starting_trips": 436,
+          "ending_trips": -411
+        }, {
+          "station_name": "Redwood City Caltrain Station",
+          "starting_trips": 895,
+          "ending_trips": -794
+        },{
+          "station_name": "California Ave Caltrain Station",
+          "starting_trips": 0,
+          "ending_trips": -45
+        }, {
+          "station_name": "Park at Olive",
+          "starting_trips": 0,
+          "ending_trips": -53
+        }, {
+          "station_name": "Santa Clara County Civic Center",
+          "starting_trips": 0,
+          "ending_trips": -3
+        }, {
+          "station_name": "Japantown",
+          "starting_trips": 0,
+          "ending_trips": -1
+        }, {
+          "station_name": "Palo Alto Caltrain Station",
+          "starting_trips": 0,
+          "ending_trips": -16
+        }, {
+          "station_name": "University and Emerson",
+          "starting_trips": 0,
+          "ending_trips": -81
+        }, {
+          "station_name": "Cowper at University",
+          "starting_trips": 0,
+          "ending_trips": -3
+        }, {
+          "station_name": "Franklin at Maple",
+          "starting_trips": 0,
+          "ending_trips": -1
+        }, {
+          "station_name": "Market at 4th",
+          "starting_trips": 0,
+          "ending_trips": -2
+        }, {
+          "station_name": "San Jose Civic Center",
+          "starting_trips": 0,
+          "ending_trips": -1
+        }, {
+          "station_name": "Stanford in Redwood City",
+          "starting_trips": 0,
+          "ending_trips": -2
+        }, {
+          "station_name": "Arena Green / SAP Center",
+          "starting_trips": 0,
+          "ending_trips": -1
+        }, {
+          "station_name": "Howard at 2nd",
+          "starting_trips": 0,
+          "ending_trips": -2
+        }, {
+          "station_name": "Rengstorff Avenue / California Street",
+          "starting_trips": 501,
+          "ending_trips": -424
+        }, {
+          "station_name": "Evelyn Park and Ride",
+          "starting_trips": 978,
+          "ending_trips": -724
+        }, {
+          "station_name": "San Antonio Caltrain Station",
+          "starting_trips": 1058,
+          "ending_trips": -991
+        }, {
+          "station_name": "San Antonio Shopping Center",
+          "starting_trips": 1069,
+          "ending_trips": -1024
+        }, {
+          "station_name": "Castro Street and El Camino Real",
+          "starting_trips": 1230,
+          "ending_trips": -1113
+        }, {
+          "station_name": "Mountain View City Hall",
+          "starting_trips": 1583,
+          "ending_trips": -1720
+        }, {
+          "station_name": "Mountain View Caltrain Station",
+          "starting_trips": 3580,
+          "ending_trips": -3792
+        }]

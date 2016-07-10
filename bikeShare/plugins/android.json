@@ -1,0 +1,29 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.example.bikeShare"
+        },
+        "cordova-plugin-geolocation": {
+            "PACKAGE_NAME": "com.example.bikeShare"
+        },
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "com.example.bikeShare"
+        },
+        "plugin.google.maps": {
+            "API_KEY_FOR_ANDROID": "AIzaSyCk1XWKRP598TlXPccd-moZtGQBPvHt9wA",
+            "PACKAGE_NAME": "com.example.bikeShare"
+        }
+    },
+    "dependent_plugins": {
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "com.example.bikeShare"
+        }
+    }
+}

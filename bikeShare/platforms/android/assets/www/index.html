@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+
+   #map_canvas {
+    height: 100%;
+  }
+</style>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<script type="text/javascript" src="cordova.js"></script>
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+<link rel="stylesheet" href="css/index.css" />
+<link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css" />
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="http://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/highcharts-more.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/highcharts-3d.js"></script>
+<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
+<script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
+<script type="text/javascript" src="init.js"></script>
+<script type="text/javascript" src="suggestSubmit.js"></script>
+<script type="text/javascript" src="userDocksStations.js"></script>
+<script type="text/javascript" src="cluster.js"></script>
+<script type="text/javascript" src="startingEnding.js"></script>
+<script src="bower_components/geocomplete/jquery.geocomplete.js"></script>
+
+
+
+<script id="panel-init">
+  $(function() {
+    $( "body>[data-role='panel']" ).panel();
+  });
+</script>
+<script type="text/javascript">
+  var app = angular.module('myApp', []);
+  app.controller('myCtrl', function($scope) {
+    $scope.uri;
+    $scope.get = function(uri,data){
+      $scope.uri = uri;
+      $scope.stations = data.stationBeanList;
+    }
+    });
+  </script>
+</head>
+<body id="angularApp" ng-app="myApp" ng-controller="myCtrl">
+
+  <div data-role="panel" id="myPanel1" data-display="push">
+
+    <nav class="navbar navbar-default" style="background-color:#ddd;border-color:black">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a  href="#pageone" id ="refreshDataButton" data-rel="close" class="ui-btn ui-icon ui-icon-refresh ui-btn-icon-left" style="margin-left:20px;margin-right:20px">Refresh Data</a>
+        </div>
+        <ul class="nav navbar-nav textColor">
+          <li><a href="#pageone" data-transition="slide">Real Time Analysis</a></li>
+          <li><a href="#pagetwo" data-transition="slide">Trips Analysis</a></li>
+          <li><a href="#pagethree" data-transition="flip">Starting Ending Trips</a></li>
+          <li><a href="#pagefour" data-transition="flip">Hourly/Weekly Analysis</a></li>
+          <li><a href="#pagefour" data-transition="flip">Users/Trips/Stations/Docks Analysis</a></li>
+          <li><a href="#pagethree" data-transition="flip">Starting Ending Trips</a></li>
+          <li><a href="#pagethree" data-transition="flip">Stations/Bikes Analysis</a></li>
+          <li><a href="#cluster" data-transition="flip">Stations Cluster</a></li>
+          <li><a href="VirtualRealData/virtualRealData.html" data-transition="slide">Virtual Data Visualization</a></li>
+          <li><a href="#suggestStation" onclick="suggestStation()" data-transition="slide">Suggest a Station</a></li>
+        </ul>
+      </div>
+    </nav>
+
+  </div>
+
+  <div data-role="panel" id="myPanel2" data-theme="b" data-display="push" data-position="right">
+   <nav class="navbar navbar-default" style="background-color:#675d5d;border-color:white">
+    <div align ='center'  class="container-fluid">
+     <div class="navbar-header">
+      <label align="center"> Custom Settings</label>
+    </div>
+    <ul class="nav navbar-nav">
+      <li>
+        <div class="ui-field-contain" data-theme="b">
+          <label for="select-choice-1" class="select">Default City</label>
+          <select class="form-control" style="width:70%" id="selectCity">
+            <option value="San Jose">San Jose</option>
+            <option value="San Francisco">San Francisco</option>
+            <option value="Chicago">Chicago</option>
+            <option value="New York">New York</option>
+          </select>
+        </div>
+      </li>
+      <li>
+        <div class="ui-field-contain">  
+          <label>Auto Refresh</label>
+          <select class="form-control" name="switch" id="switchAutoRefresh" class="pull-right" data-role="slider" style="width:70%" >
+            <option value="off">Off</option>
+            <option value="on" selected>On</option>
+          </select>
+        </div>
+      </li>
+      <li>
+        <div class="ui-field-contain">  
+          <label>Temprature</label>
+          <select class="form-control" name="switch" id="switchTemprature" class="pull-right" data-role="slider" style="width:70%">
+            <option value="Metric">Celcius &#8451;</option>
+            <option value="Imperial" selected>Fahrenheit &#8457;</option>
+          </select>
+        </div>
+      </li>
+      <li>
+        <div class="ui-field-contain">  
+          <label>Distance</label>
+          <select class="form-control" name="switch" id="switchDistance" class="pull-right" data-role="slider" style="width:70%" >
+            <option value="K">Kilo Meter</option>
+            <option value="M" selected>Miles</option>
+          </select>
+        </div>
+      </li>
+    </ul>
+    <a id ="saveSettings" href="#pageone"  style="background-color:cadetblue" data-rel="close" class="ui-btn ui-icon ui-icon-check ui-btn-icon-left">Save Changes</a>
+  </div>
+</nav>
+
+</div>
+<div data-role="page" id="pageone">
+
+  <div data-role="header" data-theme="b">
+    <a href="#myPanel1" class="ui-btn ui-icon-grid ui-btn-icon-left">Menu</a>
+    <h1>Bike Share App</h1>
+
+    <a href="#myPanel2" class="ui-btn ui-icon-gear ui-btn-icon-left">Settings</a>
+    <div data-role="navbar">
+      <ul>
+        <li><a href="#pageone" data-transition="slide">Maps</a></li>
+        <li><a href="#realtimeCharts" data-transition="slide">Pie Chart</a></li>
+        <li><a href="#pagetwo" data-transition="slide">Bar Chart</a></li>
+
+      </ul>
+    </div>
+  </div>
+
+  <div data-role="main" class="ui-content" style="padding:0px">
+
+    <div style="width:100%;height:560px;color:white;text-shadow: 0 0 #f3f3f3 !important" id="map_canvas">
+      <fieldset class="ui-grid-a" style="padding:0px;width:85%">
+        <div class="ui-block-a" style="width:90%"> <input id="pac-input" type="search" style="height:40px" placeholder="Enter Address"> </div>
+        <div class="ui-block-b" style="width:10%">
+          <button style="height:40px;width:50px;background-color:#337ab7;" align="center" data-theme="b" class="ui-btn ui-icon-search ui-btn-icon-left btn btn-primary" id="submit" type="button"></button>   
+        </div>     
+      </fieldset>
+      <select id="availability">
+        <option value="all">All</option>
+        <option value="high">High</option>
+        <option value="low">Low</option>
+        <option value="medium">Average</option>
+      </select>
+      <div class="pull-left" style="background:grey;width:170px" id="infobox">
+
+        <div style="background-color:skyblue;height: 25px;">
+         <div id="button" style="color:black">+</div>
+         <label style="color:black"> Weather Info </label>
+
+       </div>
+       <div id="box-holder">
+        <div style="background:grey;width:170px;height:150px">
+          <div id='weather'></div>
+          <div id='lastRefreshedTime'></div><hr>
+          <div class="pull-right" id='avabilityInfo'> </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div data-role="footer" data-theme="b" style="text-align:center;">
+  <div data-role="controlgroup" data-type="horizontal">
+    Copyrights&#169Team 5 Smart City
+  </div>
+</div>
+</div>
+
+<div data-role="page" id="pagetwo">
+
+  <div data-role="header" data-theme="b">
+    <a href="#myPanel1" class="ui-btn ui-icon-grid ui-btn-icon-left">Menu</a>
+    <h1>Bike Share App</h1>
+    <a href="#myPanel2" class="ui-btn ui-icon-gear ui-btn-icon-left">Settings</a>
+    <div data-role="navbar">
+      <ul>
+        <li><a href="#pageone" data-transition="slide">Maps</a></li>
+        <li><a href="#realtimeCharts" data-transition="slide">Pie Chart</a></li>
+        <li><a href="#pagetwo" data-transition="slide">Bar Chart</a></li>
+
+      </ul>
+    </div>
+  </div>
+
+  <div data-role="main" class="ui-content">
+
+    <div id="realTimeAvailabilityStationsWise"></div>
+ <!--  <label>Total Stations({{stations.length}})</label>
+  <select class="form-control" ng-if='uri==="http://www.bayareabikeshare.com/stations/json"' ng-model="searchText1">
+   <option value=''>Select City</option>
+   <option value='san francisco'>San Francisco</option>
+   <option value='san jose'>San Jose</option>
+   <option value='palo alto'>Palo Alto</option>
+   <option value='mountain view'>Mountain View</option>
+   <option value='redwood city'>Redwood City</option>
+ </select>
+
+
+
+ <div class="ui-field-contain">
+  <input ng-model="searchText" placeholder="search station/city..." type="text">
+</div>
+<table data-role="table" class="ui-responsive ui-shadow" id="myTable">
+  <thead>
+    <tr>
+      <th>Station Id</th>
+      <th>Station Name</th>
+      <th >Available Bikes</th>
+      <th >Available Docks</th>
+      <th data-priority="1">City</th>
+      <th data-priority="2">Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="station in stations | orderBy:'-city' | filter:searchText1 || searchText" >
+     <td>{{$index+1}}</td>
+     <td >{{station.stationName}}</td>
+     <td style="text-align:center">{{station.availableBikes}}</td>
+     <td style="text-align:center">{{station.availableDocks}}</td>
+     <td data-priority="1">{{station.city}}</td>
+     <td data-priority="2">{{station.statusValue}}</td>
+   </tr>
+ </tbody>
+</table> -->
+</div>
+
+<div data-role="footer" data-theme="b" style="text-align:center;">
+  <div data-role="controlgroup" data-type="horizontal">
+    Copyrights&#169Team 5 Smart City
+  </div>
+</div>
+</div>
+<div data-role="page" id="pagethree">
+  <div data-role="header" data-theme="b">
+    <a href="#myPanel1" class="ui-btn ui-icon-grid ui-btn-icon-left">Menu</a>
+    <h1>Bike Share App</h1>
+    <a href="#myPanel2" class="ui-btn ui-icon-gear ui-btn-icon-left">Settings</a>
+    <div data-role="navbar">
+      <ul>
+        <li><a href="#pageone" data-transition="slide">Hourly</a></li>
+        <li><a href="#pagetwo" data-transition="slide">Daily</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div data-role="main" class="ui-content">
+    <div id="startEndStation"></div>
+  </div>
+
+  <div data-role="footer" data-theme="b" style="text-align:center;">
+    <div data-role="controlgroup" data-type="horizontal">
+      Copyrights&#169Team 5 Smart City
+    </div>
+  </div>
+</div>
+<div data-role="page" id="pagefour">
+  <div data-role="header" data-theme="b">
+    <a href="#myPanel1" class="ui-btn ui-icon-grid ui-btn-icon-left">Menu</a>
+    <h1>Bike Share App</h1>
+    <a href="#myPanel2" class="ui-btn ui-icon-gear ui-btn-icon-left">Settings</a>
+    <div data-role="navbar">
+      <ul>
+        <li><a href="#pagefour" data-transition="slide">Stations</a></li>
+        <li><a href="#pagefive" data-transition="slide">Docks</a></li>
+        <li><a href="#pagesix" data-transition="slide">Trips</a></li>
+        <li><a href="#pageseven" data-transition="slide">Users</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div data-role="main" class="ui-content">
+    <div id="cityWiseStationsData"></div>
+  </div>
+
+  <div data-role="footer" data-theme="b" style="text-align:center;">
+    <div data-role="controlgroup" data-type="horizontal">
+      Copyrights&#169Team 5 Smart City
+    </div>
+  </div>
+</div>
+<div data-role="page" id="pagefive">
+  <div data-role="header" data-theme="b">
+    <a href="#myPanel1" class="ui-btn ui-icon-grid ui-btn-icon-left">Menu</a>
+    <h1>Bike Share App</h1>
+    <a href="#myPanel2" class="ui-btn ui-icon-gear ui-btn-icon-left">Settings</a>
+    <div data-role="navbar">
+      <ul>
+        <li><a href="#pagefour" data-transition="slide">Stations</a></li>
+        <li><a href="#pagefive" data-transition="slide">Docks</a></li>
+        <li><a href="#pagesix" data-transition="slide">Trips</a></li>
+        <li><a href="#pageseven" data-transition="slide">Users</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div data-role="main" class="ui-content">
+    <div id="cityWiseDocksData"></div>
+  </div>
+
+  <div data-role="footer" data-theme="b" style="text-align:center;">
+    <div data-role="controlgroup" data-type="horizontal">
+      Copyrights&#169Team 5 Smart City
+    </div>
+  </div>
+</div>
+<div data-role="page" id="pagesix">
+
+  <div data-role="header" data-theme="b">
+    <a href="#myPanel1" class="ui-btn ui-icon-grid ui-btn-icon-left">Menu</a>
+    <h1>Bike Share App</h1>
+    <a href="#myPanel2" class="ui-btn ui-icon-gear ui-btn-icon-left">Settings</a>
+    <div data-role="navbar">
+      <ul>
+       <li><a href="#pagefour" data-transition="slide">Stations</a></li>
+       <li><a href="#pagefive" data-transition="slide">Docks</a></li>
+       <li><a href="#pagesix" data-transition="slide">Trips</a></li>
+       <li><a href="#pageseven" data-transition="slide">Users</a></li>
+     </ul>
+   </div>
+ </div>
+
+ <div data-role="main" class="ui-content">
+  <div id="cityWiseTrips"></div>
+</div>
+
+<div data-role="footer" data-theme="b" style="text-align:center;">
+  <div data-role="controlgroup" data-type="horizontal">
+    Copyrights&#169Team 5 Smart City
+  </div>
+</div>
+</div>
+<div data-role="page" id="pageseven">
+
+
+  <div data-role="header" data-theme="b">
+    <a href="#myPanel1" class="ui-btn ui-icon-grid ui-btn-icon-left">Menu</a>
+    <h1>Bike Share App</h1>
+    <a href="#myPanel2" class="ui-btn ui-icon-gear ui-btn-icon-left">Settings</a>
+    <div data-role="navbar">
+      <ul>
+        <li><a href="#pagefour" data-transition="slide">Stations</a></li>
+        <li><a href="#pagefive" data-transition="slide">Docks</a></li>
+        <li><a href="#pagesix" data-transition="slide">Trips</a></li>
+        <li><a href="#pageseven" data-transition="slide">Users</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div data-role="main" class="ui-content">
+    <div id="userTypeWiseTrips" ></div>
+  </div>
+
+  <div data-role="footer" data-theme="b" style="text-align:center;">
+    <div data-role="controlgroup" data-type="horizontal">
+      Copyrights&#169Team 5 Smart City
+    </div>
+  </div>
+</div>
+<div data-role="page" id="realtimeCharts">
+
+
+  <div data-role="header" data-theme="b">
+    <a href="#myPanel1" class="ui-btn ui-icon-grid ui-btn-icon-left">Menu</a>
+    <h1>Bike Share App</h1>
+    <a href="#myPanel2" class="ui-btn ui-icon-gear ui-btn-icon-left">Settings</a>
+    <div data-role="navbar">
+      <ul>
+        <ul>
+          <li><a href="#pageone" data-transition="slide">Maps</a></li>
+          <li><a href="#realtimeCharts" data-transition="slide">Pie Chart</a></li>
+          <li><a href="#pagetwo" data-transition="slide">Bar Chart</a></li>
+
+        </ul>
+      </ul>
+    </div>
+  </div>
+
+  <div data-role="main" class="ui-content">
+    <div id="realTimeAvailability" ></div>
+  </div>
+
+  <div data-role="footer" data-theme="b" style="text-align:center;">
+    <div data-role="controlgroup" data-type="horizontal">
+      Copyrights&#169Team 5 Smart City
+    </div>
+  </div>
+</div>
+<div data-role="page" id="cluster">
+
+
+  <div data-role="header" data-theme="b">
+    <a href="#myPanel1" class="ui-btn ui-icon-grid ui-btn-icon-left">Menu</a>
+    <h1>Bike Share App</h1>
+    <a href="#myPanel2" class="ui-btn ui-icon-gear ui-btn-icon-left">Settings</a>
+    <div data-role="navbar">
+      <ul>
+        <ul>
+          <li><a href="#pageone" data-transition="slide">Maps</a></li>
+          <li><a href="#realtimeCharts" data-transition="slide">Pie Chart</a></li>
+        </ul>
+      </ul>
+    </div>
+  </div>
+
+  <div data-role="main" class="ui-content">
+    <div id="clusterStations" ></div>
+  </div>
+
+  <div data-role="footer" data-theme="b" style="text-align:center;">
+    <div data-role="controlgroup" data-type="horizontal">
+      Copyrights&#169Team 5 Smart City
+    </div>
+  </div>
+</div>
+<div data-role="page" id="suggestStation">
+
+
+  <div data-role="header" data-theme="b">
+    <a href="#myPanel1" class="ui-btn ui-icon-grid ui-btn-icon-left">Menu</a>
+    <h1>Bike Share App</h1>
+    <a href="#myPanel2" class="ui-btn ui-icon-gear ui-btn-icon-left">Settings</a>
+    <div data-role="navbar">
+      <ul>
+        <ul>
+          <li><a href="#pageone" data-transition="slide">Maps</a></li>
+          <li><a href="#realtimeCharts" data-transition="slide">Pie Chart</a></li>
+          <li><a href="#pagetwo" data-transition="slide">Bar Chart</a></li>
+
+        </ul>
+      </ul>
+    </div>
+  </div>
+
+  <div data-role="main" class="ui-content" style="padding:0px">
+    <div >
+     <input id="pac-input1" type="search" placeholder="Enter Address">
+     <button  align="center" class="btn btn-primary" style="background-color: cadetblue;color:white;text-shadow: 0 0 #f3f3f3 !important" onclick="suggestSubmit()" type="button">Search</button>   </div>
+     <div style="width:100%;height:560px;color:white;" id="map_suggest">
+
+     </div>
+
+     <div data-role="footer" data-theme="b" style="text-align:center;">
+      <div data-role="controlgroup" data-type="horizontal">
+        Copyrights&#169Team 5 Smart City
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBzN2oLDIa7lxs6TCUCBDtIDicaCdxMlwk&libraries=places&callback=initAutocompleteDelayed"
+async defer></script>
+<!--     <script type="text/javascript">
+  $(document).ready(function() {
+  
+new Map();
+
+  });
+</script> -->
+</html>
+
