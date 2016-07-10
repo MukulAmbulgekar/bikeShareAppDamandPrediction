@@ -19,7 +19,8 @@ Also we are going to implement demand prediction based on historical data.
 * Install google maps plugin (to show bike stations on map) -** cordova plugin add cordova-plugin-googlemaps --variable API_KEY_FOR_ANDROID='Your Google API Key'**
 
 * After set up, clone this project directory and build  run - **cordova build
- cordova run --device**  (or emulator if you are running on android emulator)
+
+*  cordova run --device**  (or emulator if you are running on android emulator)
 
 
 **Team**
