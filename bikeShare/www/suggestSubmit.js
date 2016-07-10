@@ -1,7 +1,11 @@
 var map_suggest;
+var iconMarker;
 
 function suggestStation() {
-
+  iconMarker = L.icon({
+    iconUrl: 'http://rb.evo-studio.net/img/icn_big_marker_bikeparking.png',
+    iconSize: [40, 50]
+  })
   map_suggest = L.map('map_suggest');
 
   $("#pac-input1").geocomplete();
@@ -15,7 +19,6 @@ function suggestStation() {
 
   function onLocationFound(e) {
     var radius = e.accuracy;
-
     L.marker(e.latlng).addTo(map_suggest)
       .bindPopup("<b style='color:red'>You are within 20 meters from this point</b>").openPopup();
 
@@ -24,6 +27,8 @@ function suggestStation() {
       fillColor: '#f03',
       fillOpacity: 0.3
     }).addTo(map_suggest);
+    plotBikeStations(e.latlng);
+
   }
 
   function onMapClick(e) {
@@ -47,6 +52,17 @@ function suggestStation() {
   // map2 = new google.maps.Map(document.getElementById("map_canvas2"), myOptions);
 }
 
+function plotBikeStations(latlng) {
+  $.getJSON('http://www.bayareabikeshare.com/stations/json', function(data) {
+    _.forEach(data.stationBeanList, function(eachStation) {
+      L.marker(L.latLng(eachStation.latitude, eachStation.longitude), {
+          icon: iconMarker
+        }).addTo(map_suggest)
+        .bindPopup("<b style='color:blue'>" + eachStation.stationName + ' - ' + eachStation.landMark + "</b>").openPopup();
+    });
+     map_suggest.setView(latlng, 16);
+  })
+}
 
 function getAddressFromLatLong(latLng) {
   var geocoder = new google.maps.Geocoder();
@@ -72,9 +88,9 @@ function getLatLongFromAddress(address) {
   }, function(results, status) {
 
     if (status === google.maps.GeocoderStatus.OK) {
-      var newLatLng = new L.LatLng(results[0].geometry.location.lat(), results[0].geometry.location.lng())
-      map_suggest.setView(newLatLng, 18)
-        //map_suggest.setCenter()
+      var newLatLng = new L.LatLng(results[0].geometry.location.lat(), results[0].geometry.location.lng());
+      map_suggest.setView(newLatLng, 18);
+      //map_suggest.setCenter()
       L.marker(newLatLng).addTo(map_suggest)
         .bindPopup("<b style='color:red'>You are within 20 meters from this point</b>").openPopup();
 
@@ -88,6 +104,7 @@ function getLatLongFromAddress(address) {
   })
 }
 suggestStation();
+
 function suggestSubmit() {
   getLatLongFromAddress(document.getElementById('pac-input1').value)
 

@@ -4,7 +4,6 @@ var sortedStationsWiseData;
 function getJSONStartEnd() {
 	$.getJSON('startingEnding.json', function(data) {
 		sortedStationsWiseData= _.sortBy(data,'starting_trips');
-		console.log("sortedStationsWiseData",sortedStationsWiseData)
 		plotStartEnd();
 	})
 };
