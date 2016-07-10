@@ -23,6 +23,19 @@ Also we are going to implement demand prediction based on historical data.
 
 *  cordova run --device**  (or emulator if you are running on android emulator)
 
+**Sample screenshots of Application**
+
+![Screenshot_20160626-180638.jpg](https://bitbucket.org/repo/LpbXRr/images/513438713-Screenshot_20160626-180638.jpg)
+
+![Screenshot_20160710-151640.jpg](https://bitbucket.org/repo/LpbXRr/images/272707689-Screenshot_20160710-151640.jpg)
+
+![Screenshot_20160710-151702.jpg](https://bitbucket.org/repo/LpbXRr/images/2543461093-Screenshot_20160710-151702.jpg)
+
+![Screenshot_20160710-151734.jpg]
+(https://bitbucket.org/repo/LpbXRr/images/3886778214-Screenshot_20160710-151734.jpg)
+
+![Screenshot_20160626-180551.png]
+(https://bitbucket.org/repo/LpbXRr/images/2895305956-Screenshot_20160626-180551.png)
 
 **Team**
 
