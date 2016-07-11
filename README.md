@@ -10,6 +10,7 @@ Also we are going to implement demand prediction based on historical data.
 *  Get weather information
 *  Search places on google maps to get bike status status
 * Suggest new Bike Stations
+* K-Means Clustering for stations based on number of trips
 
 ### How do I get set up? ###
 
