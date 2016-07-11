@@ -1,15 +1,23 @@
 # README #
 
 This is android app for bay area bike share analysis (Real Time and Historical).
+We are also providing dashboard analytics for bike vendors.
 Also we are going to implement demand prediction based on historical data.
 
-### What is this repository for? ###
+### Things that are done ###
 
 *  Find nearby bike stations (within 0.5 miles) and their avalability
-*  Get real time status of available Bikes/Docks
+*  Get real time status of available Bikes/Docks at a particular bike station
 *  Get weather information
-*  Search places on google maps to get bike status status
-* Suggest new Bike Stations
+*  Search places on google maps to get bike status.
+*  Suggest new Bike Stations
+
+
+** Features to be implemented **
+* Demand prediction Algorithm
+* Big data analysis  - web dashboard
+* Android Mobile Application for real time analysis and status of bike stations 
+
 
 ### How do I get set up? ###
 
