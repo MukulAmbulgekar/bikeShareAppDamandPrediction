@@ -162,7 +162,8 @@ h1 {
     background-color:#23527c !important;
 }
 #cityWiseStationsData, #userTypeWiseTrips, #cityWiseTrips, #cityWiseDocksData, #startEndStation, #realTimeAvailability
-#realTimeAvailabilityStationsWise, #clusterStations, #realTimeAvailabilityStationsWise, #realTimeAvailability {
+#realTimeAvailabilityStationsWise, #clusterStations, #realTimeAvailabilityStationsWise, #realTimeAvailability, 
+#clusterHours, #clusterMonths, #clusterDays {
     height:100%;
     width:97%;
     position: relative;

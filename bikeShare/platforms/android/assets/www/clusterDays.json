@@ -1,0 +1,29 @@
+[{
+	"day_of_week_number": "1",
+	"trips": 63718,
+	"cluster": 1
+}, {
+	"day_of_week_number": "2",
+	"trips": 66503,
+	"cluster": 1
+}, {
+	"day_of_week_number": "3",
+	"trips": 65285,
+	"cluster": 1
+}, {
+	"day_of_week_number": "4",
+	"trips": 63184,
+	"cluster": 1
+}, {
+	"day_of_week_number": "5",
+	"trips": 57808,
+	"cluster": 1
+}, {
+	"day_of_week_number": "6",
+	"trips": 20935,
+	"cluster": 2
+}, {
+	"day_of_week_number": "7",
+	"trips": 16719,
+	"cluster": 2
+}]

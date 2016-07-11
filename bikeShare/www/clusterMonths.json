@@ -1,0 +1,49 @@
+[{
+	"month_of_trip": "01",
+	"trips": 27840,
+	"cluster": 1
+}, {
+	"month_of_trip": "10",
+	"trips": 34220,
+	"cluster": 2
+}, {
+	"month_of_trip": "11",
+	"trips": 25516,
+	"cluster": 1
+}, {
+	"month_of_trip": "12",
+	"trips": 19677,
+	"cluster": 3
+}, {
+	"month_of_trip": "02",
+	"trips": 26401,
+	"cluster": 1
+}, {
+	"month_of_trip": "03",
+	"trips": 31626,
+	"cluster": 2
+}, {
+	"month_of_trip": "04",
+	"trips": 31363,
+	"cluster": 2
+}, {
+	"month_of_trip": "05",
+	"trips": 29540,
+	"cluster": 2
+}, {
+	"month_of_trip": "06",
+	"trips": 31907,
+	"cluster": 2
+}, {
+	"month_of_trip": "07",
+	"trips": 32476,
+	"cluster": 2
+}, {
+	"month_of_trip": "08",
+	"trips": 31904,
+	"cluster": 2
+}, {
+	"month_of_trip": "09",
+	"trips": 31682,
+	"cluster": 2
+}]

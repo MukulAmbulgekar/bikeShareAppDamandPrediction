@@ -1,0 +1,97 @@
+[{
+	"hour": 0,
+	"trips": 1014,
+	"cluster": 1
+}, {
+	"hour": 9,
+	"trips": 34944,
+	"cluster": 3
+}, {
+	"hour": 10,
+	"trips": 15325,
+	"cluster": 2
+}, {
+	"hour": 11,
+	"trips": 14064,
+	"cluster": 2
+}, {
+	"hour": 12,
+	"trips": 15790,
+	"cluster": 2
+}, {
+	"hour": 13,
+	"trips": 14702,
+	"cluster": 2
+}, {
+	"hour": 14,
+	"trips": 12813,
+	"cluster": 2
+}, {
+	"hour": 15,
+	"trips": 16490,
+	"cluster": 2
+}, {
+	"hour": 16,
+	"trips": 31832,
+	"cluster": 3
+}, {
+	"hour": 17,
+	"trips": 45818,
+	"cluster": 3
+}, {
+	"hour": 18,
+	"trips": 30967,
+	"cluster": 3
+}, {
+	"hour": 1,
+	"trips": 511,
+	"cluster": 1
+}, {
+	"hour": 19,
+	"trips": 14914,
+	"cluster": 2
+}, {
+	"hour": 20,
+	"trips": 8251,
+	"cluster": 1
+}, {
+	"hour": 21,
+	"trips": 5741,
+	"cluster": 1
+}, {
+	"hour": 22,
+	"trips": 3662,
+	"cluster": 1
+}, {
+	"hour": 23,
+	"trips": 2207,
+	"cluster": 1
+}, {
+	"hour": 2,
+	"trips": 282,
+	"cluster": 1
+}, {
+	"hour": 3,
+	"trips": 156,
+	"cluster": 1
+}, {
+	"hour": 4,
+	"trips": 640,
+	"cluster": 1
+}, {
+	"hour": 5,
+	"trips": 1848,
+	"cluster": 1
+}, {
+	"hour": 6,
+	"trips": 8014,
+	"cluster": 1
+}, {
+	"hour": 7,
+	"trips": 24743,
+	"cluster": 2
+}, {
+	"hour": 8,
+	"trips": 49424,
+	"cluster": 3
+}]

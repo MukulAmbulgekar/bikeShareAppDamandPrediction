@@ -29,7 +29,10 @@
 <script type="text/javascript" src="suggestSubmit.js"></script>
 <script type="text/javascript" src="userDocksStations.js"></script>
 <script type="text/javascript" src="cluster.js"></script>
+<script type="text/javascript" src="clusterHours.js"></script>
+<script type="text/javascript" src="clusterMonths.js"></script>
 <script type="text/javascript" src="startingEnding.js"></script>
+<script type="text/javascript" src="clusterDays.js"></script>
 <script src="bower_components/geocomplete/jquery.geocomplete.js"></script>
 
 
@@ -68,6 +71,9 @@
           <li><a href="#pagethree" data-transition="flip">Starting Ending Trips</a></li>
           <li><a href="#pagethree" data-transition="flip">Stations/Bikes Analysis</a></li>
           <li><a href="#cluster" data-transition="flip">Stations Cluster</a></li>
+          <li><a href="#clusterHrs" data-transition="flip">Hours Cluster</a></li>
+          <li><a href="#clusterDys" data-transition="flip">Days Cluster</a></li>
+          <li><a href="#clusterMnths" data-transition="flip">Months Cluster</a></li>
           <li><a href="VirtualRealData/virtualRealData.html" data-transition="slide">Virtual Data Visualization</a></li>
           <li><a href="#suggestStation" onclick="suggestStation()" data-transition="slide">Suggest a Station</a></li>
         </ul>
@@ -422,6 +428,87 @@
 
   <div data-role="main" class="ui-content">
     <div id="clusterStations" ></div>
+  </div>
+
+  <div data-role="footer" data-theme="b" style="text-align:center;">
+    <div data-role="controlgroup" data-type="horizontal">
+      Copyrights&#169Team 5 Smart City
+    </div>
+  </div>
+</div>
+<div data-role="page" id="clusterHrs">
+
+
+  <div data-role="header" data-theme="b">
+    <a href="#myPanel1" class="ui-btn ui-icon-grid ui-btn-icon-left">Menu</a>
+    <h1>Bike Share App</h1>
+    <a href="#myPanel2" class="ui-btn ui-icon-gear ui-btn-icon-left">Settings</a>
+    <div data-role="navbar">
+      <ul>
+        <ul>
+          <li><a href="#pageone" data-transition="slide">Maps</a></li>
+          <li><a href="#realtimeCharts" data-transition="slide">Pie Chart</a></li>
+        </ul>
+      </ul>
+    </div>
+  </div>
+
+  <div data-role="main" class="ui-content">
+    <div id="clusterHours" ></div>
+  </div>
+
+  <div data-role="footer" data-theme="b" style="text-align:center;">
+    <div data-role="controlgroup" data-type="horizontal">
+      Copyrights&#169Team 5 Smart City
+    </div>
+  </div>
+</div>
+<div data-role="page" id="clusterMnths">
+
+
+  <div data-role="header" data-theme="b">
+    <a href="#myPanel1" class="ui-btn ui-icon-grid ui-btn-icon-left">Menu</a>
+    <h1>Bike Share App</h1>
+    <a href="#myPanel2" class="ui-btn ui-icon-gear ui-btn-icon-left">Settings</a>
+    <div data-role="navbar">
+      <ul>
+        <ul>
+          <li><a href="#pageone" data-transition="slide">Maps</a></li>
+          <li><a href="#realtimeCharts" data-transition="slide">Pie Chart</a></li>
+        </ul>
+      </ul>
+    </div>
+  </div>
+
+  <div data-role="main" class="ui-content">
+    <div id="clusterMonths" ></div>
+  </div>
+
+  <div data-role="footer" data-theme="b" style="text-align:center;">
+    <div data-role="controlgroup" data-type="horizontal">
+      Copyrights&#169Team 5 Smart City
+    </div>
+  </div>
+</div>
+<div data-role="page" id="clusterDys">
+
+
+  <div data-role="header" data-theme="b">
+    <a href="#myPanel1" class="ui-btn ui-icon-grid ui-btn-icon-left">Menu</a>
+    <h1>Bike Share App</h1>
+    <a href="#myPanel2" class="ui-btn ui-icon-gear ui-btn-icon-left">Settings</a>
+    <div data-role="navbar">
+      <ul>
+        <ul>
+          <li><a href="#pageone" data-transition="slide">Maps</a></li>
+          <li><a href="#realtimeCharts" data-transition="slide">Pie Chart</a></li>
+        </ul>
+      </ul>
+    </div>
+  </div>
+
+  <div data-role="main" class="ui-content">
+    <div id="clusterDays" ></div>
   </div>
 
   <div data-role="footer" data-theme="b" style="text-align:center;">
