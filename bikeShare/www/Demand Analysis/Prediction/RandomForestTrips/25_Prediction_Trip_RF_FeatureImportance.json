@@ -1,0 +1,1 @@
+[{"Feature":"workingDay","Importance":-0.1633,"_row":"workingDay"},{"Feature":"month","Importance":10.483,"_row":"month"},{"Feature":"hour","Importance":15.8028,"_row":"hour"},{"Feature":"day","Importance":-0.391,"_row":"day"},{"Feature":"peakHour","Importance":12.4016,"_row":"peakHour"}]

@@ -2,7 +2,7 @@ var newData = [];
 var dateSelected = 'Mar 23, 2015';
 var fromDate;
 var toDate;
-var stationIdSelected = 70;
+var stationIdSelected = 50;
 $(function() {
     getPrediction(dateSelected);
 })
@@ -13,7 +13,7 @@ function getPrediction(dateSelect) {
     fromDate = new Date(dateSelect);
     var toDate = new Date(dateSelect)
     toDate.setDate(toDate.getDate() + 1);
-    $.getJSON("/bikeShare/www/GradientBoosting/" + stationIdSelected + "_Prediction_GB.json", function(data) {
+    $.getJSON("/bikeShare/www/RandomForestTrips/" + stationIdSelected + "_Prediction_Trip_Rf.json", function(data) {
         _.forEach(data, function(eachData) {
             eachData.time = new Date(eachData.time)
             if (eachData.time.getTime() > fromDate.getTime() && eachData.time.getTime() < toDate.getTime()) {
@@ -61,7 +61,7 @@ function plotDemand() {
             }]
         },
         tooltip: {
-            valueSuffix: ' Bikes'
+            valueSuffix: ' Trips'
         },
         legend: {
             layout: 'vertical',
