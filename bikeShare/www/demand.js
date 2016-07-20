@@ -2,7 +2,7 @@ var newData = [];
 var dateSelected = 'Mar 23, 2015';
 var fromDate;
 var toDate;
-var stationIdSelected = 50;
+var stationIdSelected = 2;
 $(function() {
     getPrediction(dateSelected);
 })
@@ -13,7 +13,7 @@ function getPrediction(dateSelect) {
     fromDate = new Date(dateSelect);
     var toDate = new Date(dateSelect)
     toDate.setDate(toDate.getDate() + 1);
-    $.getJSON("/bikeShare/www/RandomForestTrips/" + stationIdSelected + "_Prediction_Trip_Rf.json", function(data) {
+    $.getJSON("/bikeShare/www/RandomForestTrips/" + stationIdSelected + "_Prediction_Trip_RF.json", function(data) {
         _.forEach(data, function(eachData) {
             eachData.time = new Date(eachData.time)
             if (eachData.time.getTime() > fromDate.getTime() && eachData.time.getTime() < toDate.getTime()) {
