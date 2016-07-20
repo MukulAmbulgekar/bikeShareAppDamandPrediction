@@ -13,6 +13,7 @@ Also we are going to implement demand prediction based on historical data.
 *  Suggest new Bike Stations
 * K-Means Clustering for stations based on number of trips
 * Added demand prediction for number of trips on hourly basis using Gradient Boosting. 
+* Added demand prediction for number of trips on hourly basis using Random Forest. 
 
 ** Features to be implemented **
 * Demand prediction Algorithm
