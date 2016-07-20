@@ -12,6 +12,7 @@ Also we are going to implement demand prediction based on historical data.
 *  Search places on google maps to get bike status.
 *  Suggest new Bike Stations
 * K-Means Clustering for stations based on number of trips
+* Added demand prediction for number of trips on hourly basis using Gradient Boosting. 
 
 ** Features to be implemented **
 * Demand prediction Algorithm
@@ -45,6 +46,11 @@ Also we are going to implement demand prediction based on historical data.
 ![Screenshot_20160626-180551.png]
 (https://bitbucket.org/repo/LpbXRr/images/2895305956-Screenshot_20160626-180551.png)
 
+![stationsCluster.png](https://bitbucket.org/repo/LpbXRr/images/1371861325-stationsCluster.png)
+
+![HoursCluster.png](https://bitbucket.org/repo/LpbXRr/images/3246384951-HoursCluster.png)
+
+![DemandPredictionGB.jpeg](https://bitbucket.org/repo/LpbXRr/images/4085174765-DemandPredictionGB.jpeg)
 **Team**
 
 * Mukul Ambulgekar
