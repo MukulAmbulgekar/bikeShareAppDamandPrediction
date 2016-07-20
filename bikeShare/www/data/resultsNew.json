@@ -1,0 +1,682 @@
+[
+  {
+    "time": "2015-03-21 08:00:00",
+    "Actual_Count": 2,
+    "Predicted_Count": 2.10151476694
+  },
+  {
+    "time": "2015-03-21 09:00:00",
+    "Actual_Count": 2,
+    "Predicted_Count": 0.667263180613
+  },
+  {
+    "time": "2015-03-21 12:00:00",
+    "Actual_Count": 2,
+    "Predicted_Count": 1.3473062579
+  },
+  {
+    "time": "2015-03-21 13:00:00",
+    "Actual_Count": 1,
+    "Predicted_Count": 1.20537378257
+  },
+  {
+    "time": "2015-03-21 16:00:00",
+    "Actual_Count": 1,
+    "Predicted_Count": 2.08995202365
+  },
+  {
+    "time": "2015-03-21 17:00:00",
+    "Actual_Count": 1,
+    "Predicted_Count": 1.13681544552
+  },
+  {
+    "time": "2015-03-21 18:00:00",
+    "Actual_Count": 1,
+    "Predicted_Count": 1.10851646164
+  },
+  {
+    "time": "2015-03-21 21:00:00",
+    "Actual_Count": 1,
+    "Predicted_Count": 1.68812902977
+  },
+  {
+    "time": "2015-03-22 11:00:00",
+    "Actual_Count": 1,
+    "Predicted_Count": 1.9793190224
+  },
+  {
+    "time": "2015-03-22 13:00:00",
+    "Actual_Count": 1,
+    "Predicted_Count": 3.18827625054
+  },
+  {
+    "time": "2015-03-22 14:00:00",
+    "Actual_Count": 1,
+    "Predicted_Count": 2.75083812055
+  },
+  {
+    "time": "2015-03-22 16:00:00",
+    "Actual_Count": 2,
+    "Predicted_Count": 2.48400977243
+  },
+  {
+    "time": "2015-03-22 17:00:00",
+    "Actual_Count": 2,
+    "Predicted_Count": 1.24799878984
+  },
+  {
+    "time": "2015-03-22 20:00:00",
+    "Actual_Count": 1,
+    "Predicted_Count": 2.33407700898
+  },
+  {
+    "time": "2015-03-23 06:00:00",
+    "Actual_Count": 3,
+    "Predicted_Count": 3.67529180506
+  },
+  {
+    "time": "2015-03-23 07:00:00",
+    "Actual_Count": 14,
+    "Predicted_Count": 9.20947273438
+  },
+  {
+    "time": "2015-03-23 08:00:00",
+    "Actual_Count": 16,
+    "Predicted_Count": 16.6415420227
+  },
+  {
+    "time": "2015-03-23 09:00:00",
+    "Actual_Count": 13,
+    "Predicted_Count": 8.44458365435
+  },
+  {
+    "time": "2015-03-23 10:00:00",
+    "Actual_Count": 6,
+    "Predicted_Count": 4.21182028429
+  },
+  {
+    "time": "2015-03-23 12:00:00",
+    "Actual_Count": 1,
+    "Predicted_Count": 1.94539173108
+  },
+  {
+    "time": "2015-03-23 13:00:00",
+    "Actual_Count": 1,
+    "Predicted_Count": 1.97904296112
+  },
+  {
+    "time": "2015-03-23 14:00:00",
+    "Actual_Count": 1,
+    "Predicted_Count": 1.22251083589
+  },
+  {
+    "time": "2015-03-23 15:00:00",
+    "Actual_Count": 4,
+    "Predicted_Count": 1.97203583093
+  },
+  {
+    "time": "2015-03-23 16:00:00",
+    "Actual_Count": 2,
+    "Predicted_Count": 3.16999413098
+  },
+  {
+    "time": "2015-03-23 17:00:00",
+    "Actual_Count": 8,
+    "Predicted_Count": 7.70984933539
+  },
+  {
+    "time": "2015-03-23 18:00:00",
+    "Actual_Count": 12,
+    "Predicted_Count": 8.00813888523
+  },
+  {
+    "time": "2015-03-23 19:00:00",
+    "Actual_Count": 11,
+    "Predicted_Count": 6.554188792
+  },
+  {
+    "time": "2015-03-23 20:00:00",
+    "Actual_Count": 1,
+    "Predicted_Count": 2.66596957644
+  },
+  {
+    "time": "2015-03-23 22:00:00",
+    "Actual_Count": 1,
+    "Predicted_Count": 1.61664985819
+  },
+  {
+    "time": "2015-03-24 00:00:00",
+    "Actual_Count": 1,
+    "Predicted_Count": 1.04856803567
+  },
+  {
+    "time": "2015-03-24 06:00:00",
+    "Actual_Count": 4,
+    "Predicted_Count": 4.38531074122
+  },
+  {
+    "time": "2015-03-24 07:00:00",
+    "Actual_Count": 28,
+    "Predicted_Count": 18.0574255745
+  },
+  {
+    "time": "2015-03-24 08:00:00",
+    "Actual_Count": 14,
+    "Predicted_Count": 23.7790124688
+  },
+  {
+    "time": "2015-03-24 09:00:00",
+    "Actual_Count": 11,
+    "Predicted_Count": 8.82711301025
+  },
+  {
+    "time": "2015-03-24 10:00:00",
+    "Actual_Count": 5,
+    "Predicted_Count": 3.84485324185
+  },
+  {
+    "time": "2015-03-24 11:00:00",
+    "Actual_Count": 1,
+    "Predicted_Count": 1.87521770422
+  },
+  {
+    "time": "2015-03-24 12:00:00",
+    "Actual_Count": 2,
+    "Predicted_Count": 1.24672153568
+  },
+  {
+    "time": "2015-03-24 15:00:00",
+    "Actual_Count": 1,
+    "Predicted_Count": 1.44828548622
+  },
+  {
+    "time": "2015-03-24 16:00:00",
+    "Actual_Count": 2,
+    "Predicted_Count": 2.48632336979
+  },
+  {
+    "time": "2015-03-24 17:00:00",
+    "Actual_Count": 4,
+    "Predicted_Count": 6.78175700187
+  },
+  {
+    "time": "2015-03-24 18:00:00",
+    "Actual_Count": 9,
+    "Predicted_Count": 7.8108958106
+  },
+  {
+    "time": "2015-03-24 19:00:00",
+    "Actual_Count": 5,
+    "Predicted_Count": 6.68437479021
+  },
+  {
+    "time": "2015-03-24 20:00:00",
+    "Actual_Count": 4,
+    "Predicted_Count": 2.96940613487
+  },
+  {
+    "time": "2015-03-24 21:00:00",
+    "Actual_Count": 1,
+    "Predicted_Count": 2.49993340005
+  },
+  {
+    "time": "2015-03-25 06:00:00",
+    "Actual_Count": 6,
+    "Predicted_Count": 4.86134577816
+  },
+  {
+    "time": "2015-03-25 07:00:00",
+    "Actual_Count": 15,
+    "Predicted_Count": 19.1971981935
+  },
+  {
+    "time": "2015-03-25 08:00:00",
+    "Actual_Count": 13,
+    "Predicted_Count": 35.916609665
+  },
+  {
+    "time": "2015-03-25 09:00:00",
+    "Actual_Count": 12,
+    "Predicted_Count": 12.8171962504
+  },
+  {
+    "time": "2015-03-25 10:00:00",
+    "Actual_Count": 4,
+    "Predicted_Count": 4.15309986421
+  },
+  {
+    "time": "2015-03-25 11:00:00",
+    "Actual_Count": 2,
+    "Predicted_Count": 1.90999149956
+  },
+  {
+    "time": "2015-03-25 12:00:00",
+    "Actual_Count": 1,
+    "Predicted_Count": 1.36316155282
+  },
+  {
+    "time": "2015-03-25 16:00:00",
+    "Actual_Count": 1,
+    "Predicted_Count": 2.86731192173
+  },
+  {
+    "time": "2015-03-25 17:00:00",
+    "Actual_Count": 6,
+    "Predicted_Count": 7.79825280745
+  },
+  {
+    "time": "2015-03-25 18:00:00",
+    "Actual_Count": 9,
+    "Predicted_Count": 8.44097062263
+  },
+  {
+    "time": "2015-03-25 19:00:00",
+    "Actual_Count": 7,
+    "Predicted_Count": 5.86505290252
+  },
+  {
+    "time": "2015-03-25 20:00:00",
+    "Actual_Count": 6,
+    "Predicted_Count": 2.85231048582
+  },
+  {
+    "time": "2015-03-25 22:00:00",
+    "Actual_Count": 1,
+    "Predicted_Count": 1.21715580784
+  },
+  {
+    "time": "2015-03-25 23:00:00",
+    "Actual_Count": 1,
+    "Predicted_Count": 1.03160996643
+  },
+  {
+    "time": "2015-03-26 06:00:00",
+    "Actual_Count": 4,
+    "Predicted_Count": 4.52184907406
+  },
+  {
+    "time": "2015-03-26 07:00:00",
+    "Actual_Count": 18,
+    "Predicted_Count": 18.6063374361
+  },
+  {
+    "time": "2015-03-26 08:00:00",
+    "Actual_Count": 33,
+    "Predicted_Count": 35.0390257216
+  },
+  {
+    "time": "2015-03-26 09:00:00",
+    "Actual_Count": 20,
+    "Predicted_Count": 12.3339517731
+  },
+  {
+    "time": "2015-03-26 10:00:00",
+    "Actual_Count": 5,
+    "Predicted_Count": 4.30698870248
+  },
+  {
+    "time": "2015-03-26 11:00:00",
+    "Actual_Count": 3,
+    "Predicted_Count": 1.98374401509
+  },
+  {
+    "time": "2015-03-26 13:00:00",
+    "Actual_Count": 1,
+    "Predicted_Count": 1.62367253477
+  },
+  {
+    "time": "2015-03-26 14:00:00",
+    "Actual_Count": 1,
+    "Predicted_Count": 1.25480010218
+  },
+  {
+    "time": "2015-03-26 15:00:00",
+    "Actual_Count": 2,
+    "Predicted_Count": 2.01693538194
+  },
+  {
+    "time": "2015-03-26 16:00:00",
+    "Actual_Count": 4,
+    "Predicted_Count": 3.0370268254
+  },
+  {
+    "time": "2015-03-26 17:00:00",
+    "Actual_Count": 11,
+    "Predicted_Count": 7.90528671575
+  },
+  {
+    "time": "2015-03-26 18:00:00",
+    "Actual_Count": 12,
+    "Predicted_Count": 8.05490355907
+  },
+  {
+    "time": "2015-03-26 19:00:00",
+    "Actual_Count": 10,
+    "Predicted_Count": 5.84962134718
+  },
+  {
+    "time": "2015-03-26 20:00:00",
+    "Actual_Count": 2,
+    "Predicted_Count": 2.964102924
+  },
+  {
+    "time": "2015-03-26 22:00:00",
+    "Actual_Count": 1,
+    "Predicted_Count": 1.20574273519
+  },
+  {
+    "time": "2015-03-26 23:00:00",
+    "Actual_Count": 2,
+    "Predicted_Count": 1.83557537044
+  },
+  {
+    "time": "2015-03-27 06:00:00",
+    "Actual_Count": 4,
+    "Predicted_Count": 3.84710281737
+  },
+  {
+    "time": "2015-03-27 07:00:00",
+    "Actual_Count": 7,
+    "Predicted_Count": 16.1468992516
+  },
+  {
+    "time": "2015-03-27 08:00:00",
+    "Actual_Count": 27,
+    "Predicted_Count": 25.3913775954
+  },
+  {
+    "time": "2015-03-27 09:00:00",
+    "Actual_Count": 16,
+    "Predicted_Count": 7.88539816112
+  },
+  {
+    "time": "2015-03-27 10:00:00",
+    "Actual_Count": 4,
+    "Predicted_Count": 4.34303902924
+  },
+  {
+    "time": "2015-03-27 11:00:00",
+    "Actual_Count": 3,
+    "Predicted_Count": 1.89979714544
+  },
+  {
+    "time": "2015-03-27 12:00:00",
+    "Actual_Count": 1,
+    "Predicted_Count": 1.87055504926
+  },
+  {
+    "time": "2015-03-27 13:00:00",
+    "Actual_Count": 3,
+    "Predicted_Count": 1.67409142983
+  },
+  {
+    "time": "2015-03-27 14:00:00",
+    "Actual_Count": 1,
+    "Predicted_Count": 1.35817068844
+  },
+  {
+    "time": "2015-03-27 15:00:00",
+    "Actual_Count": 1,
+    "Predicted_Count": 2.15524581524
+  },
+  {
+    "time": "2015-03-27 16:00:00",
+    "Actual_Count": 5,
+    "Predicted_Count": 3.01616063468
+  },
+  {
+    "time": "2015-03-27 17:00:00",
+    "Actual_Count": 8,
+    "Predicted_Count": 7.72497678896
+  },
+  {
+    "time": "2015-03-27 18:00:00",
+    "Actual_Count": 8,
+    "Predicted_Count": 7.60942727904
+  },
+  {
+    "time": "2015-03-27 19:00:00",
+    "Actual_Count": 4,
+    "Predicted_Count": 4.43389086614
+  },
+  {
+    "time": "2015-03-27 20:00:00",
+    "Actual_Count": 2,
+    "Predicted_Count": 2.55106064487
+  },
+  {
+    "time": "2015-03-27 22:00:00",
+    "Actual_Count": 2,
+    "Predicted_Count": 0.935611701935
+  },
+  {
+    "time": "2015-03-28 07:00:00",
+    "Actual_Count": 1,
+    "Predicted_Count": 1.85581803183
+  },
+  {
+    "time": "2015-03-28 08:00:00",
+    "Actual_Count": 1,
+    "Predicted_Count": 2.10151476694
+  },
+  {
+    "time": "2015-03-28 11:00:00",
+    "Actual_Count": 5,
+    "Predicted_Count": 1.50840951393
+  },
+  {
+    "time": "2015-03-28 14:00:00",
+    "Actual_Count": 1,
+    "Predicted_Count": 3.25470182736
+  },
+  {
+    "time": "2015-03-28 15:00:00",
+    "Actual_Count": 1,
+    "Predicted_Count": 2.12231618075
+  },
+  {
+    "time": "2015-03-28 16:00:00",
+    "Actual_Count": 2,
+    "Predicted_Count": 2.08995202365
+  },
+  {
+    "time": "2015-03-28 18:00:00",
+    "Actual_Count": 1,
+    "Predicted_Count": 1.10851646164
+  },
+  {
+    "time": "2015-03-28 19:00:00",
+    "Actual_Count": 1,
+    "Predicted_Count": 0.789824432191
+  },
+  {
+    "time": "2015-03-28 20:00:00",
+    "Actual_Count": 1,
+    "Predicted_Count": 2.31638813363
+  },
+  {
+    "time": "2015-03-28 23:00:00",
+    "Actual_Count": 1,
+    "Predicted_Count": 0.930656716804
+  },
+  {
+    "time": "2015-03-29 00:00:00",
+    "Actual_Count": 2,
+    "Predicted_Count": 0.951871067361
+  },
+  {
+    "time": "2015-03-29 09:00:00",
+    "Actual_Count": 1,
+    "Predicted_Count": 0.791994957742
+  },
+  {
+    "time": "2015-03-29 10:00:00",
+    "Actual_Count": 2,
+    "Predicted_Count": 2.08393459335
+  },
+  {
+    "time": "2015-03-29 12:00:00",
+    "Actual_Count": 1,
+    "Predicted_Count": 2.44648999584
+  },
+  {
+    "time": "2015-03-29 14:00:00",
+    "Actual_Count": 2,
+    "Predicted_Count": 2.75083812055
+  },
+  {
+    "time": "2015-03-29 15:00:00",
+    "Actual_Count": 1,
+    "Predicted_Count": 1.58844174896
+  },
+  {
+    "time": "2015-03-29 17:00:00",
+    "Actual_Count": 1,
+    "Predicted_Count": 1.24799878984
+  },
+  {
+    "time": "2015-03-29 18:00:00",
+    "Actual_Count": 1,
+    "Predicted_Count": 1.32498686636
+  },
+  {
+    "time": "2015-03-29 21:00:00",
+    "Actual_Count": 2,
+    "Predicted_Count": 1.28591527018
+  },
+  {
+    "time": "2015-03-29 22:00:00",
+    "Actual_Count": 1,
+    "Predicted_Count": 1.7617134425
+  },
+  {
+    "time": "2015-03-30 06:00:00",
+    "Actual_Count": 5,
+    "Predicted_Count": 3.67529180506
+  },
+  {
+    "time": "2015-03-30 07:00:00",
+    "Actual_Count": 15,
+    "Predicted_Count": 9.20947273438
+  },
+  {
+    "time": "2015-03-30 08:00:00",
+    "Actual_Count": 25,
+    "Predicted_Count": 16.6415420227
+  },
+  {
+    "time": "2015-03-30 09:00:00",
+    "Actual_Count": 13,
+    "Predicted_Count": 8.44458365435
+  },
+  {
+    "time": "2015-03-30 10:00:00",
+    "Actual_Count": 4,
+    "Predicted_Count": 4.21182028429
+  },
+  {
+    "time": "2015-03-30 12:00:00",
+    "Actual_Count": 2,
+    "Predicted_Count": 1.94539173108
+  },
+  {
+    "time": "2015-03-30 14:00:00",
+    "Actual_Count": 1,
+    "Predicted_Count": 1.22251083589
+  },
+  {
+    "time": "2015-03-30 16:00:00",
+    "Actual_Count": 4,
+    "Predicted_Count": 3.16999413098
+  },
+  {
+    "time": "2015-03-30 17:00:00",
+    "Actual_Count": 3,
+    "Predicted_Count": 7.70984933539
+  },
+  {
+    "time": "2015-03-30 18:00:00",
+    "Actual_Count": 13,
+    "Predicted_Count": 8.00813888523
+  },
+  {
+    "time": "2015-03-30 19:00:00",
+    "Actual_Count": 1,
+    "Predicted_Count": 6.554188792
+  },
+  {
+    "time": "2015-03-30 20:00:00",
+    "Actual_Count": 4,
+    "Predicted_Count": 2.66596957644
+  },
+  {
+    "time": "2015-03-30 22:00:00",
+    "Actual_Count": 1,
+    "Predicted_Count": 1.61664985819
+  },
+  {
+    "time": "2015-03-31 00:00:00",
+    "Actual_Count": 1,
+    "Predicted_Count": 1.04856803567
+  },
+  {
+    "time": "2015-03-31 06:00:00",
+    "Actual_Count": 7,
+    "Predicted_Count": 4.38531074122
+  },
+  {
+    "time": "2015-03-31 07:00:00",
+    "Actual_Count": 21,
+    "Predicted_Count": 18.0574255745
+  },
+  {
+    "time": "2015-03-31 08:00:00",
+    "Actual_Count": 38,
+    "Predicted_Count": 23.7790124688
+  },
+  {
+    "time": "2015-03-31 09:00:00",
+    "Actual_Count": 16,
+    "Predicted_Count": 8.82711301025
+  },
+  {
+    "time": "2015-03-31 10:00:00",
+    "Actual_Count": 2,
+    "Predicted_Count": 3.84485324185
+  },
+  {
+    "time": "2015-03-31 11:00:00",
+    "Actual_Count": 3,
+    "Predicted_Count": 1.87521770422
+  },
+  {
+    "time": "2015-03-31 13:00:00",
+    "Actual_Count": 8,
+    "Predicted_Count": 1.27239042802
+  },
+  {
+    "time": "2015-03-31 16:00:00",
+    "Actual_Count": 4,
+    "Predicted_Count": 2.48632336979
+  },
+  {
+    "time": "2015-03-31 17:00:00",
+    "Actual_Count": 6,
+    "Predicted_Count": 6.78175700187
+  },
+  {
+    "time": "2015-03-31 18:00:00",
+    "Actual_Count": 7,
+    "Predicted_Count": 7.8108958106
+  },
+  {
+    "time": "2015-03-31 19:00:00",
+    "Actual_Count": 10,
+    "Predicted_Count": 6.68437479021
+  },
+  {
+    "time": "2015-03-31 21:00:00",
+    "Actual_Count": 2,
+    "Predicted_Count": 2.49993340005
+  }
+]

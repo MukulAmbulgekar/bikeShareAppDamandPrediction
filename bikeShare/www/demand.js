@@ -1,38 +1,58 @@
-	var newData = [];
-$(function () {
-	$.getJSON("/bikeShare/www/data/2_Prediction.json",function(data){
-	
-		_.forEach(data,function(eachData){
-			eachData.time = new Date(eachData.time)
-			if (eachData.time.getTime() > new Date("Oct 30, 2014").getTime() && eachData.time.getTime() < new Date("Oct 31, 2014").getTime()){
-				eachData.Predicted_Count = Math.round(eachData.Predicted_Count);
-				eachData.hours= eachData.time.getHours()
-				newData.push(eachData);
-			}
-		})
-		plotDemand();
-	})
+var newData = [];
+var dateSelected = 'Mar 23, 2015';
+var fromDate;
+var toDate;
+var stationIdSelected = 70;
+$(function() {
+    getPrediction(dateSelected);
 })
 
-function plotDemand(){
-	$('#container').highcharts({
+
+function getPrediction(dateSelect) {
+    newData = [];
+    fromDate = new Date(dateSelect);
+    var toDate = new Date(dateSelect)
+    toDate.setDate(toDate.getDate() + 1);
+    $.getJSON("/bikeShare/www/GradientBoosting/" + stationIdSelected + "_Prediction_GB.json", function(data) {
+        _.forEach(data, function(eachData) {
+            eachData.time = new Date(eachData.time)
+            if (eachData.time.getTime() > fromDate.getTime() && eachData.time.getTime() < toDate.getTime()) {
+                eachData.Predicted_Count = Math.round(eachData.Predicted_Count);
+                eachData.hours = eachData.time.getHours()
+                newData.push(eachData);
+            }
+        })
+        $.getJSON("data/stations.json", function(data) {
+            if (newData.length !== 0) {
+                plotDemand();
+            } else {
+                alert("Data not found Please check dates selected")
+            }
+
+        })
+
+    })
+}
+
+function plotDemand() {
+    $('#container').highcharts({
         title: {
-            text: 'Daily Demand Prediction on hourly basis - '+ newData[0].name + ' -  Correlation :' + newData[0].correlation,
+            text: 'Daily Demand Prediction for Trips on hourly basis - <b>' + newData[0].name + '</b><br> Correlation :<b>' + newData[0].COR + '</b> <br> RMSLE:<b>' + Math.round(newData[0].RMSLE * 100) / 100 + '</b>',
             x: -20 //center
         },
         subtitle: {
-            text: 'Demand Prediction- ' + newData[0].time.getFullYear() + "/" + (newData[0].time.getMonth() + 1) + "/" + newData[0].time.getDate() ,
-            x: -20
+            text: 'Demand Prediction- <b>' + fromDate.getFullYear() + "/" + (fromDate.getMonth() + 1) + "/" + fromDate.getDate() + '</b> <br> Algorithm - <b>Gradient Boosting</b>'
+
         },
         xAxis: {
-            categories: _.pluck(newData,'hours'),
-             title: {
+            categories: _.pluck(newData, 'hours'),
+            title: {
                 text: ' Hours [0-23]'
             }
         },
         yAxis: {
             title: {
-                text: ' Avalaible Bikes'
+                text: ' Total number of trips'
             },
             plotLines: [{
                 value: 0,
@@ -50,11 +70,11 @@ function plotDemand(){
             borderWidth: 0
         },
         series: [{
-            name: 'Actual Avalability',
-            data: _.pluck(newData,'Actual_Count')
+            name: 'Actual Trips',
+            data: _.pluck(newData, 'Actual_Count')
         }, {
-            name: 'Predicted Avalability',
-            data: _.pluck(newData,'Predicted_Count')
+            name: 'Predicted Trips',
+            data: _.pluck(newData, 'Predicted_Count')
         }]
     });
 }
