@@ -47,15 +47,27 @@ Also we are going to implement demand prediction based on historical data.
 ![Screenshot_20160626-180551.png]
 (https://bitbucket.org/repo/LpbXRr/images/2895305956-Screenshot_20160626-180551.png)
 
+Station Cluster
+
 ![stationsCluster.png](https://bitbucket.org/repo/LpbXRr/images/1371861325-stationsCluster.png)
 
+Hourly Clustering
 ![HoursCluster.png](https://bitbucket.org/repo/LpbXRr/images/3246384951-HoursCluster.png)
 
+Gradient Boosting
 ![DemandPredictionGB.jpeg](https://bitbucket.org/repo/LpbXRr/images/4085174765-DemandPredictionGB.jpeg)
+
+Random Forest
 
 ![DemandPredictionRandomForest.png](https://bitbucket.org/repo/LpbXRr/images/2741760046-DemandPredictionRandomForest.png)
 
-![DemandPredictionDashboard.png](https://bitbucket.org/repo/LpbXRr/images/3532423375-DemandPredictionDashboard.png)
+DemandPredictionDashboard - Trips
+
+![TripsPrediction.png](https://bitbucket.org/repo/LpbXRr/images/60955282-TripsPrediction.png)
+
+DemandPredictionDashboard - Availability
+
+![AvalabilityPrediction.png](https://bitbucket.org/repo/LpbXRr/images/2109473631-AvalabilityPrediction.png)
 
 **Team**
 
