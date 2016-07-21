@@ -55,6 +55,8 @@ Also we are going to implement demand prediction based on historical data.
 
 ![DemandPredictionRandomForest.png](https://bitbucket.org/repo/LpbXRr/images/2741760046-DemandPredictionRandomForest.png)
 
+![DemandPredictionDashboard.png](https://bitbucket.org/repo/LpbXRr/images/3532423375-DemandPredictionDashboard.png)
+
 **Team**
 
 * Mukul Ambulgekar
