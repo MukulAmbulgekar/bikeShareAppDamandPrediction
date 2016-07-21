@@ -361,7 +361,7 @@ Highcharts.theme = {
     },
     tooltip: {
         borderWidth: 0,
-        fontSize: '14px'
+        fontSize: '16px'
     },
     legend: {
         itemStyle: {

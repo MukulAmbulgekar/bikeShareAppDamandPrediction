@@ -7,9 +7,10 @@
   }
   div.ui-datepicker{
    font-size:20px;
+   width:300px !important;
  }
  .ui-select #items-button {
-  width:340px !important;
+  width:300px !important;
 }
 
 </style>
@@ -25,6 +26,12 @@
       changeMonth: true,
       changeYear: true,
       yearRange: '2014:2015',
+      beforeShowDay: function (date) {
+        if (date.getDate() >20) {
+          return [true, ''];
+        }
+        return [false, ''];
+      },
       defaultDate: new Date(2015, 05, 23),
       onSelect: function (date) {
         getPrediction(date);
@@ -63,11 +70,13 @@
   <h2 align="center"> Random Forest</h2>
 </div>
 </div>
-<div class="col-md-2">
- <select style="display:inline-block"; id="items"  onchange="getPrediction();"></select>
+<div class="col-md-2" style="background-color: grey !important;color: white;text-shadow: 0 0 0 !important">
+ <select style="display:inline-block"; id="items"  onchange="getPrediction();">
+    <option value="70">Select Station</option>
+ </select>
  <div   id="datepicker"></div>
  <br>
- <table style="font-size:24px" class="table table-striped">
+ <table style="font-size:24px" class="table table-bordered">
   <thead>
     <tr>
       <th>Method</th>
@@ -98,7 +107,7 @@
     </tr>
   </tbody>
 </table>
- <table style="font-size:20px" class="table table-striped">
+ <table style="font-size:20px" class="table table-bordered">
   <thead>
     <tr>
       <th>Features</th>
