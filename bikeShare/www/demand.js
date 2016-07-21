@@ -3,15 +3,26 @@ var dateSelected = 'Mar 23, 2015';
 var fromDate;
 var toDate;
 var stationIdSelected = 70;
+var stationsNames = [];
 $(function() {
-    getPrediction(dateSelected);
+    $.getJSON("data/stations.json", function(data) {
+        stationsNames = data;
+        populateSelectList();
+        getPrediction(dateSelected);
+    })
 })
 
 
 function getPrediction(dateSelect) {
+    if ($("#items option:selected").val() !== undefined) {
+        stationIdSelected = $("#items option:selected").val();
+    }
+    if (dateSelect) {
+        dateSelected = new Date(dateSelect);
+    }
     newData = [];
-    fromDate = new Date(dateSelect);
-    var toDate = new Date(dateSelect)
+    fromDate = new Date(dateSelected);
+    var toDate = new Date(dateSelected)
     toDate.setDate(toDate.getDate() + 1);
     $.getJSON("/bikeShare/www/RandomForestTripsScikit/" + stationIdSelected + "_Prediction_RF_SCI.json", function(data) {
         _.forEach(data, function(eachData) {
@@ -22,16 +33,22 @@ function getPrediction(dateSelect) {
                 newData.push(eachData);
             }
         })
-        $.getJSON("data/stations.json", function(data) {
-            if (newData.length !== 0) {
-                plotDemand();
-            } else {
-                alert("Data not found Please check dates selected")
-            }
-
-        })
-
+        if (newData.length !== 0) {
+            plotDemand();
+        } else {
+            alert("Data not found Please check dates selected")
+        }
     })
+}
+
+
+function populateSelectList() {
+    var option = '';
+    for (var i = 0; i < stationsNames.length; i++) {
+        option += '<option value="' + stationsNames[i].station_id + '">' + stationsNames[i].name + '</option>';
+    }
+    //$('#items').append("<option value='70'>San Francisco Caltrain (Townsend at 4th) </option>");
+    $('#items').append(option);
 }
 
 function plotDemand() {
@@ -115,7 +132,8 @@ Highcharts.theme = {
         backgroundColor: "#aaeeee",
         style: {
             fontFamily: "Signika, serif"
-        }
+        },
+        height: '600'
     },
     title: {
         style: {
