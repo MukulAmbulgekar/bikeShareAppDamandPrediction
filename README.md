@@ -52,6 +52,9 @@ Also we are going to implement demand prediction based on historical data.
 ![HoursCluster.png](https://bitbucket.org/repo/LpbXRr/images/3246384951-HoursCluster.png)
 
 ![DemandPredictionGB.jpeg](https://bitbucket.org/repo/LpbXRr/images/4085174765-DemandPredictionGB.jpeg)
+
+![DemandPredictionRandomForest.png](https://bitbucket.org/repo/LpbXRr/images/2741760046-DemandPredictionRandomForest.png)
+
 **Team**
 
 * Mukul Ambulgekar
