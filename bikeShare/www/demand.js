@@ -1,4 +1,7 @@
-var newData = [];
+var randomForest = [];
+var gradientBoosting = [];
+var adaBoostingTrips = [];
+var extraTreesClassifierTrips = [];
 var dateSelected = 'Mar 23, 2015';
 var fromDate;
 var toDate;
@@ -12,7 +15,6 @@ $(function() {
     })
 })
 
-
 function getPrediction(dateSelect) {
     if ($("#items option:selected").val() !== undefined) {
         stationIdSelected = $("#items option:selected").val();
@@ -20,24 +22,60 @@ function getPrediction(dateSelect) {
     if (dateSelect) {
         dateSelected = new Date(dateSelect);
     }
-    newData = [];
+    randomForest = [];
+    gradientBoosting = [];
+    extraTreesClassifierTrips = [];
+    adaBoostingTrips = [];
     fromDate = new Date(dateSelected);
     var toDate = new Date(dateSelected)
     toDate.setDate(toDate.getDate() + 1);
-    $.getJSON("/bikeShare/www/RandomForestTripsScikit/" + stationIdSelected + "_Prediction_RF_SCI.json", function(data) {
+    $.getJSON("/bikeShare/www/Demand Analysis/Prediction/RandomForestTripsScikit/" + stationIdSelected + "_Prediction_RF_SCI.json", function(data) {
         _.forEach(data, function(eachData) {
             eachData.time = new Date(eachData.time)
             if (eachData.time.getTime() > fromDate.getTime() && eachData.time.getTime() < toDate.getTime()) {
                 eachData.Predicted_Count = Math.round(eachData.Predicted_Count);
                 eachData.hours = eachData.time.getHours() + ':00'
-                newData.push(eachData);
+                randomForest.push(eachData);
             }
+        });
+        $.getJSON("/bikeShare/www/Demand Analysis/Prediction/GradientBoosting/" + stationIdSelected + "_Prediction_GB.json", function(data) {
+            _.forEach(data, function(eachData) {
+                eachData.time = new Date(eachData.time)
+                if (eachData.time.getTime() > fromDate.getTime() && eachData.time.getTime() < toDate.getTime()) {
+                    eachData.Predicted_Count = Math.round(eachData.Predicted_Count);
+                    eachData.hours = eachData.time.getHours() + ':00'
+                    gradientBoosting.push(eachData);
+                }
+            })
+            $.getJSON("/bikeShare/www/Demand Analysis/Prediction/ExtraTreesClassifierTrips/" + stationIdSelected + "_Prediction_ET.json", function(data) {
+                _.forEach(data, function(eachData) {
+                    eachData.time = new Date(eachData.time)
+                    if (eachData.time.getTime() > fromDate.getTime() && eachData.time.getTime() < toDate.getTime()) {
+                        eachData.Predicted_Count = Math.round(eachData.Predicted_Count);
+                        eachData.hours = eachData.time.getHours() + ':00'
+                        extraTreesClassifierTrips.push(eachData);
+                    }
+                })
+                $.getJSON("/bikeShare/www/Demand Analysis/Prediction/AdaBoostingTrips/" + stationIdSelected + "_Prediction_AB.json", function(data) {
+                    _.forEach(data, function(eachData) {
+                        eachData.time = new Date(eachData.time)
+                        if (eachData.time.getTime() > fromDate.getTime() && eachData.time.getTime() < toDate.getTime()) {
+                            eachData.Predicted_Count = Math.round(eachData.Predicted_Count);
+                            eachData.hours = eachData.time.getHours() + ':00'
+                            adaBoostingTrips.push(eachData);
+                        }
+                    })
+                    if (randomForest.length !== 0) {
+                        plotDemand();
+                        generateTableValues();
+                    } else {
+                        alert("Data not found Please check dates selected")
+                    }
+                })
+
+            })
+
         })
-        if (newData.length !== 0) {
-            plotDemand();
-        } else {
-            alert("Data not found Please check dates selected")
-        }
     })
 }
 
@@ -51,10 +89,28 @@ function populateSelectList() {
     $('#items').append(option);
 }
 
+function generateTableValues(){
+$("#gradientRSML").text(Math.round(gradientBoosting[0].RMSLE * 100) / 100)
+$("#gradientCOR").text(gradientBoosting[0].COR)
+$("#randomRSML").text(Math.round(randomForest[0].RMSLE * 100) / 100)
+$("#randomCOR").text(randomForest[0].COR)
+$("#extraRSML").text(Math.round(extraTreesClassifierTrips[0].RMSLE * 100) / 100)
+$("#extraCOR").text(extraTreesClassifierTrips[0].COR)
+$("#adaRSML").text(Math.round(adaBoostingTrips[0].RMSLE * 100) / 100)
+$("#adaCOR").text(adaBoostingTrips[0].COR)
+/*$("#gradientCOR").text('Mukul')
+$("#gradientCOR").text('Mukul')
+$("#gradientCOR").text('Mukul')
+$("#gradientCOR").text('Mukul')
+$("#gradientCOR").text('Mukul')
+$("#gradientCOR").text('Mukul')*/
+
+}
+
 function plotDemand() {
-    $('#container').highcharts({
+    $('#randomForest').highcharts({
         title: {
-            text: 'Daily Demand Prediction for Trips on hourly basis - <b>' + newData[0].name + '</b><br> Correlation :<b>' + newData[0].COR + '</b>  RMSLE:<b>' + Math.round(newData[0].RMSLE * 100) / 100 + '</b>',
+            text: 'Daily Demand Prediction for Trips on hourly basis - <b>' + randomForest[0].name + '</b><br> Correlation :<b>' + randomForest[0].COR + '</b>  RMSLE:<b>' + Math.round(randomForest[0].RMSLE * 100) / 100 + '</b>',
             x: -20 //center
         },
         subtitle: {
@@ -62,7 +118,7 @@ function plotDemand() {
 
         },
         xAxis: {
-            categories: _.pluck(newData, 'hours'),
+            categories: _.pluck(randomForest, 'hours'),
             title: {
                 text: ' Hours [0-23]',
                 style: {
@@ -97,10 +153,165 @@ function plotDemand() {
         },
         series: [{
             name: 'Actual Trips',
-            data: _.pluck(newData, 'Actual_Count')
+            data: _.pluck(randomForest, 'Actual_Count')
         }, {
             name: 'Predicted Trips',
-            data: _.pluck(newData, 'Predicted_Count')
+            data: _.pluck(randomForest, 'Predicted_Count')
+        }]
+    });
+    // gradient boosting
+
+    $('#gradientBoosting').highcharts({
+        title: {
+            text: 'Daily Demand Prediction for Trips on hourly basis - <b>' + gradientBoosting[0].name + '</b><br> Correlation :<b>' + gradientBoosting[0].COR + '</b>  RMSLE:<b>' + Math.round(gradientBoosting[0].RMSLE * 100) / 100 + '</b>',
+            x: -20 //center
+        },
+        subtitle: {
+            text: 'Demand Prediction- <b>' + fromDate.getFullYear() + "/" + (fromDate.getMonth() + 1) + "/" + fromDate.getDate() + '</b> <br> Algorithm - <b>Gradient Boosting</b>'
+
+        },
+        xAxis: {
+            categories: _.pluck(gradientBoosting, 'hours'),
+            title: {
+                text: ' Hours [0-23]',
+                style: {
+                    fontSize: '16px'
+                }
+            }
+        },
+        yAxis: {
+            title: {
+                text: ' Total number of trips',
+                style: {
+                    fontSize: '16px'
+                }
+            },
+            plotLines: [{
+                value: 0,
+                width: 1,
+                color: '#808080'
+            }]
+        },
+        tooltip: {
+            valueSuffix: ' Trips',
+            style: {
+                fontSize: '16px'
+            }
+        },
+        legend: {
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'middle',
+            borderWidth: 0
+        },
+        series: [{
+            name: 'Actual Trips',
+            data: _.pluck(gradientBoosting, 'Actual_Count')
+        }, {
+            name: 'Predicted Trips',
+            data: _.pluck(gradientBoosting, 'Predicted_Count')
+        }]
+    });adaBoostingTrips
+    $('#extraTreesClassifierTrips').highcharts({
+        title: {
+            text: 'Daily Demand Prediction for Trips on hourly basis - <b>' + extraTreesClassifierTrips[0].name + '</b><br> Correlation :<b>' + extraTreesClassifierTrips[0].COR + '</b>  RMSLE:<b>' + Math.round(extraTreesClassifierTrips[0].RMSLE * 100) / 100 + '</b>',
+            x: -20 //center
+        },
+        subtitle: {
+            text: 'Demand Prediction- <b>' + fromDate.getFullYear() + "/" + (fromDate.getMonth() + 1) + "/" + fromDate.getDate() + '</b> <br> Algorithm - <b>Extra Trees Regressor</b>'
+
+        },
+        xAxis: {
+            categories: _.pluck(extraTreesClassifierTrips, 'hours'),
+            title: {
+                text: ' Hours [0-23]',
+                style: {
+                    fontSize: '16px'
+                }
+            }
+        },
+        yAxis: {
+            title: {
+                text: ' Total number of trips',
+                style: {
+                    fontSize: '16px'
+                }
+            },
+            plotLines: [{
+                value: 0,
+                width: 1,
+                color: '#808080'
+            }]
+        },
+        tooltip: {
+            valueSuffix: ' Trips',
+            style: {
+                fontSize: '16px'
+            }
+        },
+        legend: {
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'middle',
+            borderWidth: 0
+        },
+        series: [{
+            name: 'Actual Trips',
+            data: _.pluck(extraTreesClassifierTrips, 'Actual_Count')
+        }, {
+            name: 'Predicted Trips',
+            data: _.pluck(extraTreesClassifierTrips, 'Predicted_Count')
+        }]
+    });
+     $('#adaBoostingTrips').highcharts({
+        title: {
+            text: 'Daily Demand Prediction for Trips on hourly basis - <b>' + adaBoostingTrips[0].name + '</b><br> Correlation :<b>' + adaBoostingTrips[0].COR + '</b>  RMSLE:<b>' + Math.round(adaBoostingTrips[0].RMSLE * 100) / 100 + '</b>',
+            x: -20 //center
+        },
+        subtitle: {
+            text: 'Demand Prediction- <b>' + fromDate.getFullYear() + "/" + (fromDate.getMonth() + 1) + "/" + fromDate.getDate() + '</b> <br> Algorithm - <b>ADA Boosting</b>'
+
+        },
+        xAxis: {
+            categories: _.pluck(adaBoostingTrips, 'hours'),
+            title: {
+                text: ' Hours [0-23]',
+                style: {
+                    fontSize: '16px'
+                }
+            }
+        },
+        yAxis: {
+            title: {
+                text: ' Total number of trips',
+                style: {
+                    fontSize: '16px'
+                }
+            },
+            plotLines: [{
+                value: 0,
+                width: 1,
+                color: '#808080'
+            }]
+        },
+        tooltip: {
+            valueSuffix: ' Trips',
+            style: {
+                fontSize: '16px'
+            }
+        },
+        legend: {
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'middle',
+            borderWidth: 0
+        },
+        series: [{
+            name: 'Actual Trips',
+            data: _.pluck(adaBoostingTrips, 'Actual_Count')
+        }, {
+            name: 'Predicted Trips',
+            data: _.pluck(adaBoostingTrips, 'Predicted_Count')
         }]
     });
 }
