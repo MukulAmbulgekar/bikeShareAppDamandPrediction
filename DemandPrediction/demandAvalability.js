@@ -29,7 +29,7 @@ function getPrediction(dateSelect) {
     fromDate = new Date(dateSelected);
     var toDate = new Date(dateSelected)
     toDate.setDate(toDate.getDate() + 1);
-    $.getJSON("/bikeShare/www/Demand Analysis/Prediction/RandomForestStatus/" + stationIdSelected + "_Prediction_Status_RF.json", function(data) {
+    $.getJSON("/DemandPrediction/Demand Analysis/Prediction/RandomForestStatus/" + stationIdSelected + "_Prediction_Status_RF.json", function(data) {
         _.forEach(data, function(eachData) {
             eachData.time = new Date(eachData.time)
             if (eachData.time.getTime() > fromDate.getTime() && eachData.time.getTime() < toDate.getTime()) {
@@ -38,7 +38,7 @@ function getPrediction(dateSelect) {
                 randomForest.push(eachData);
             }
         });
-        $.getJSON("/bikeShare/www/Demand Analysis/Prediction/GradientBoostingStatus/" + stationIdSelected + "_Prediction_Status_GB.json", function(data) {
+        $.getJSON("/DemandPrediction/Demand Analysis/Prediction/GradientBoostingStatus/" + stationIdSelected + "_Prediction_Status_GB.json", function(data) {
             _.forEach(data, function(eachData) {
                 eachData.time = new Date(eachData.time)
                 if (eachData.time.getTime() > fromDate.getTime() && eachData.time.getTime() < toDate.getTime()) {
@@ -47,7 +47,7 @@ function getPrediction(dateSelect) {
                     gradientBoosting.push(eachData);
                 }
             })
-            $.getJSON("/bikeShare/www/Demand Analysis/Prediction/ExtraTreesStatus/" + stationIdSelected + "_Prediction_Status_ET.json", function(data) {
+            $.getJSON("/DemandPrediction/Demand Analysis/Prediction/ExtraTreesStatus/" + stationIdSelected + "_Prediction_Status_ET.json", function(data) {
                 _.forEach(data, function(eachData) {
                     eachData.time = new Date(eachData.time)
                     if (eachData.time.getTime() > fromDate.getTime() && eachData.time.getTime() < toDate.getTime()) {
@@ -56,7 +56,7 @@ function getPrediction(dateSelect) {
                         extraTreesClassifierTrips.push(eachData);
                     }
                 })
-                $.getJSON("/bikeShare/www/Demand Analysis/Prediction/AdaBoostingStatus/" + stationIdSelected + "_Prediction_Status_AB.json", function(data) {
+                $.getJSON("/DemandPrediction/Demand Analysis/Prediction/AdaBoostingStatus/" + stationIdSelected + "_Prediction_Status_AB.json", function(data) {
                     _.forEach(data, function(eachData) {
                         eachData.time = new Date(eachData.time)
                         if (eachData.time.getTime() > fromDate.getTime() && eachData.time.getTime() < toDate.getTime()) {
