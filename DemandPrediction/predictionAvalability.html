@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+   #map_canvas {
+    height: 100%;
+  }
+  div.ui-datepicker{
+   font-size:19px;
+ }
+</style>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Demand Prediction - Trips</title>
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="/resources/demos/style.css">
+<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+<script>
+  $( function() {
+    $( "#datepicker" ).datepicker({
+      changeMonth: true,
+      changeYear: true,
+      yearRange: '2014:2015',
+      beforeShowDay: function (date) {
+        if (date.getDate() >20) {
+          return [true, ''];
+        }
+        return [false, ''];
+      },
+      defaultDate: new Date(2015, 05, 23),
+      onSelect: function (date) {
+        getPrediction(date);
+      }});
+  } );
+</script>
+<script type="text/javascript" src="cordova.js"></script>
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+<link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css" />
+
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="http://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/highcharts-more.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/highcharts-3d.js"></script>
+<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
+<script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
+<script src="bower_components/geocomplete/jquery.geocomplete.js"></script>
+<script type="text/javascript" src="demandAvalability.js"></script>
+</head>
+<body>
+<div class="col-md-12" style="background-color: #333;color: white;">
+ <h1 align="center"> Demand Prediction - Avalability (2014-2015)</h1>
+ </div>
+<div >
+ <div class="col-md-2"></div>
+ <div class="col-md-10">
+  <div class="col-md-6">
+   <h3 align="center"> Gradient Boosting</h3>
+ </div>
+ <div class="col-md-6">
+  <h2 align="center"> Random Forest</h2>
+</div>
+</div>
+<div class="col-md-2" style="background-color: grey !important;color: white;text-shadow: 0 0 0 !important">
+ <select style="display:inline-block"; id="items"  onchange="getPrediction();">
+   <option value="70">Select Station</option>
+ </select>
+ <div   id="datepicker"></div>
+ <br>
+ <table style="font-size:24px" class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Method</th>
+      <th>RSML Error</th>
+      <th>COR</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Gradient Boosting</td>
+      <td id="gradientRSML"></td>
+       <td id="gradientCOR"></td>
+    </tr>
+    <tr>
+      <td>Random Forest</td>
+       <td id="randomRSML"></td>
+      <td id="randomCOR"></td>
+    </tr>
+    <tr>
+      <td>Extra Trees Regressor</td>
+      <td id="extraRSML"></td>
+     <td id="extraCOR"></td>
+    </tr>
+    <tr>
+      <td>Ada Boosting</td>
+       <td id="adaRSML"></td>
+     <td id="adaCOR"></td>
+    </tr>
+  </tbody>
+</table>
+ <table style="font-size:20px" class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Features</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Working Day (Weekday/Weekend)</td>
+    </tr>
+    <tr>
+      <td>Month</td>
+    </tr>
+    <tr>
+      <td>Hour</td>
+    </tr>
+    <tr>
+      <td>Day</td>
+    </tr>
+        <tr>
+      <td>Peak Hour(7AM-9AM,5PM-7PM)</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+ <!-- <div class="col-md-3" style="min-height:200px" >
+  
+ </div>
+ <div class="col-md-3" style="min-height:400px" >
+ </div>
+ <div class="col-md-3" style="min-height:400px" >
+ </div> -->
+ <div class="col-md-10">
+
+  <div class="col-md-6">
+   <div  id="gradientBoosting"></div>
+ </div>
+ <div class="col-md-6">
+  <div  id="randomForest"></div>
+</div>
+<div class="col-md-6">
+ <h2 align="center"> Extra Trees Regressor</h2>
+ <div  id="extraTreesClassifierTrips"></div>
+</div>
+<div class="col-md-6">
+ <h2 align="center"> Ada Boosting</h2>
+ <div  id="adaBoostingTrips"></div>
+</div>
+</div>
+</div>
+</body>
+
+</html>
