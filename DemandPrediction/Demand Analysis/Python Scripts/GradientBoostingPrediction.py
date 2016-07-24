@@ -26,7 +26,7 @@ if __name__ == '__main__':
         for col in ['Count']:
             train['log-' + col] = train[col].apply(lambda x: np.log1p(x))
 
-        features = ["workingDay","month","hour","day","peakHour"]
+        features = ["workingDay","month","hour","day","peakHour","rain"]
 
         clf = ensemble.GradientBoostingRegressor(n_estimators=200, max_depth=3)         
         clf.fit(train[features],train['log-Count'])

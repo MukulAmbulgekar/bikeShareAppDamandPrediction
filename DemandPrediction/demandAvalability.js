@@ -372,16 +372,16 @@ Highcharts.theme = {
     xAxis: {
         labels: {
             style: {
-                color: '#6e6e70',
-                fontSize: '20px'
+                color: 'black',
+                fontSize: '20'
             }
         }
     },
     yAxis: {
         labels: {
             style: {
-                color: '#6e6e70',
-                fontSize: '20px'
+                color: 'black',
+                fontSize: '20'
             }
         }
     },

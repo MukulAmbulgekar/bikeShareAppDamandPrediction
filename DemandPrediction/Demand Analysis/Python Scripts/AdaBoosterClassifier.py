@@ -27,7 +27,7 @@ if __name__ == '__main__':
 		for col in ["Count"]:
 			train['log-'+ col] = train[col].apply(lambda x:np.log1p(x))
 
-		features = ["workingDay","month","hour","day","peakHour"]
+		features = ["workingDay","month","hour","day","peakHour","rain"]
 
 		clf= ensemble.AdaBoostRegressor(n_estimators=100)
 		clf.fit(train[features],train['log-Count'])
