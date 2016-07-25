@@ -29,7 +29,8 @@ if __name__ == '__main__':
         features = ["workingDay","month","hour","day","peakHour","rain"]
 
         clf = ensemble.GradientBoostingRegressor(n_estimators=200, max_depth=3)         
-        clf.fit(train[features],train['log-Count'])
+        f = clf.fit(train[features],train['log-Count'])
+        print f.feature_importances_
         result = clf.predict(test[features])
         result = np.expm1(result)
         df=pd.DataFrame({'station_id':test['station_id'],'name':test['name'],'time':test['time'],'Actual_Count':test['Count'],'Predicted_Count':result,'RMSLE':rmsele(test['Count'],result),'COR':round(np.corrcoef(test['Count'],result)[0, 1],2) })

@@ -31,10 +31,13 @@ if __name__ == '__main__':
 
 		clf= ensemble.RandomForestRegressor(n_estimators=100)
 		clf.fit(train[features],train['log-Count'])
+		
+		featureImportance = pd.DataFrame(clf.fit(train[features],train['log-Count']).feature_importances_)
+		#print featureImportance
 		result= clf.predict(test[features])
 		result = np.expm1(result);
 		df = pd.DataFrame({'station_id':test['station_id'],'name':test['name'],'time':test['time'],'Actual_Count':test['Count'],'Predicted_Count':result,'RMSLE':rmsele(test['Count'],result),'COR':round(np.corrcoef(test['Count'],result)[0, 1],2) })
 		df.reset_index().to_json('../Prediction/RandomForestTripsScikit/'+str(i_station)+'_Prediction_RF_SCI.json',orient='records')
-
+		featureImportance.to_json('../Prediction/RandomForestTripsScikit/'+str(i_station)+'_Feature_RF_SCI.json',orient='records')
         #df.to_csv('Prediction/AdaBoosting/'+str(i_station)+'_Prediction_AB.csv', index = False, columns=['station_id','name','time','Actual_Count','Predicted_Count','RMSLE','COR']) 
 

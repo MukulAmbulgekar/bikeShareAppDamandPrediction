@@ -15,6 +15,19 @@ $(function() {
     })
 })
 
+function callPython() {
+    $.ajax({
+        type: "GET",
+        url: "./Demand Analysis/Python Scripts/GradientBoostingPredictionCityFuture.py",
+        data: {
+            param: 'mukul'
+        }
+    }).done(function(o) {
+        alert(o)
+        // do something
+    });
+}
+
 function getPrediction(dateSelect) {
     if ($("#items option:selected").val() !== undefined) {
         stationIdSelected = $("#items option:selected").val();
