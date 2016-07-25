@@ -29,9 +29,9 @@ Also we are going to implement demand prediction based on historical data.
 
 * Install google maps plugin (to show bike stations on map) -** cordova plugin add cordova-plugin-googlemaps --variable API_KEY_FOR_ANDROID='Your Google API Key'**
 
-* After set up, clone this project directory and build  run - **cordova build
+* After set up, clone this project directory and build  run - **cordova build**
 
-*  cordova run --device**  (or emulator if you are running on android emulator)
+*  **cordova run --device**  (or emulator if you are running on android emulator)
 
 **Sample screenshots of Application**
 
@@ -63,11 +63,15 @@ Random Forest
 
 DemandPredictionDashboard - Trips
 
-![TripsPrediction.png](https://bitbucket.org/repo/LpbXRr/images/60955282-TripsPrediction.png)
+![TripsPredictionDashboard.png](https://bitbucket.org/repo/LpbXRr/images/809193236-TripsPredictionDashboard.png)
 
 DemandPredictionDashboard - Availability
 
 ![AvalabilityPrediction.png](https://bitbucket.org/repo/LpbXRr/images/2109473631-AvalabilityPrediction.png)
+
+Future prediction for number of trips based on month, type of day(weekday/weekend), temp, rain etc.
+
+![FutureDemandPrediction.png](https://bitbucket.org/repo/LpbXRr/images/999112961-FutureDemandPrediction.png)
 
 **Team**
 
