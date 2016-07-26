@@ -15,19 +15,6 @@ $(function() {
     })
 })
 
-function callPython() {
-    $.ajax({
-        type: "GET",
-        url: "./Demand Analysis/Python Scripts/GradientBoostingPredictionCityFuture.py",
-        data: {
-            param: 'mukul'
-        }
-    }).done(function(o) {
-        alert(o)
-        // do something
-    });
-}
-
 function getPrediction(dateSelect) {
     if ($("#items option:selected").val() !== undefined) {
         stationIdSelected = $("#items option:selected").val();
@@ -358,12 +345,16 @@ Highcharts.theme = {
         style: {
             fontFamily: "Signika, serif"
         },
-        height: '530'
+        height: '580',
+        borderWidth: "2",
+        borderColor: "black",
+        type: 'line'
     },
     title: {
         style: {
             color: 'black',
             fontSize: '20px',
+            margin:"20",
             // fontWeight: 'bold'
         }
     },
@@ -371,6 +362,7 @@ Highcharts.theme = {
         style: {
             color: 'black',
             fontSize: '16px',
+            margin:"20",
         }
     },
     tooltip: {
@@ -397,7 +389,13 @@ Highcharts.theme = {
                 color: 'black',
                 fontSize: '20'
             }
-        }
+        },
+        gridLineColor: 'red',
+        plotLines: [{
+            value: 0,
+            width: 10,
+            color: 'red'
+        }]
     },
     plotOptions: {
         series: {

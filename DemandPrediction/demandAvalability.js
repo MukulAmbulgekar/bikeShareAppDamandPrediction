@@ -89,21 +89,21 @@ function populateSelectList() {
     $('#items').append(option);
 }
 
-function generateTableValues(){
-$("#gradientRSML").text(Math.round(gradientBoosting[0].RMSLE * 100) / 100)
-$("#gradientCOR").text(gradientBoosting[0].COR)
-$("#randomRSML").text(Math.round(randomForest[0].RMSLE * 100) / 100)
-$("#randomCOR").text(randomForest[0].COR)
-$("#extraRSML").text(Math.round(extraTreesClassifierTrips[0].RMSLE * 100) / 100)
-$("#extraCOR").text(extraTreesClassifierTrips[0].COR)
-$("#adaRSML").text(Math.round(adaBoostingTrips[0].RMSLE * 100) / 100)
-$("#adaCOR").text(adaBoostingTrips[0].COR)
-/*$("#gradientCOR").text('Mukul')
-$("#gradientCOR").text('Mukul')
-$("#gradientCOR").text('Mukul')
-$("#gradientCOR").text('Mukul')
-$("#gradientCOR").text('Mukul')
-$("#gradientCOR").text('Mukul')*/
+function generateTableValues() {
+    $("#gradientRSML").text(Math.round(gradientBoosting[0].RMSLE * 100) / 100)
+    $("#gradientCOR").text(gradientBoosting[0].COR)
+    $("#randomRSML").text(Math.round(randomForest[0].RMSLE * 100) / 100)
+    $("#randomCOR").text(randomForest[0].COR)
+    $("#extraRSML").text(Math.round(extraTreesClassifierTrips[0].RMSLE * 100) / 100)
+    $("#extraCOR").text(extraTreesClassifierTrips[0].COR)
+    $("#adaRSML").text(Math.round(adaBoostingTrips[0].RMSLE * 100) / 100)
+    $("#adaCOR").text(adaBoostingTrips[0].COR)
+        /*$("#gradientCOR").text('Mukul')
+        $("#gradientCOR").text('Mukul')
+        $("#gradientCOR").text('Mukul')
+        $("#gradientCOR").text('Mukul')
+        $("#gradientCOR").text('Mukul')
+        $("#gradientCOR").text('Mukul')*/
 
 }
 
@@ -211,7 +211,8 @@ function plotDemand() {
             name: 'Predicted Bikes',
             data: _.pluck(gradientBoosting, 'Predicted_Count')
         }]
-    });adaBoostingTrips
+    });
+    adaBoostingTrips
     $('#extraTreesClassifierTrips').highcharts({
         title: {
             text: 'Daily Demand Prediction for Bikes on hourly basis - <b>' + extraTreesClassifierTrips[0].name + '</b><br> Correlation :<b>' + extraTreesClassifierTrips[0].COR + '</b>  RMSLE:<b>' + Math.round(extraTreesClassifierTrips[0].RMSLE * 100) / 100 + '</b>',
@@ -263,7 +264,7 @@ function plotDemand() {
             data: _.pluck(extraTreesClassifierTrips, 'Predicted_Count')
         }]
     });
-     $('#adaBoostingTrips').highcharts({
+    $('#adaBoostingTrips').highcharts({
         title: {
             text: 'Daily Demand Prediction for Bikes on hourly basis - <b>' + adaBoostingTrips[0].name + '</b><br> Correlation :<b>' + adaBoostingTrips[0].COR + '</b>  RMSLE:<b>' + Math.round(adaBoostingTrips[0].RMSLE * 100) / 100 + '</b>',
             x: -20 //center
@@ -344,7 +345,9 @@ Highcharts.theme = {
         style: {
             fontFamily: "Signika, serif"
         },
-        height: '530'
+        height: '560',
+        borderWidth: "2",
+        borderColor: "black"
     },
     title: {
         style: {

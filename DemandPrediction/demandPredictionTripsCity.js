@@ -229,7 +229,7 @@ function plotDemand() {
             x: -20 //center
         },
         subtitle: {
-            text: '<br> Month: <b>' + months[monthSelected - 1].name + '</b> Type of Day: <b>' + daySelected + '</b> Rain:<b>' + rainSelected + '</b>'
+            text: '<br> Month: <b>' + months[monthSelected - 1].name + '</b> Type of Day: <b>' + daySelected + '</b><br> Rain:<b>' + rainSelected + '</b>' + '</b> Temp:<b>' + tempSelected + '</b>'
 
         },
         xAxis: {
@@ -251,7 +251,7 @@ function plotDemand() {
                     color: "black"
                 }
             },
-            gridLineColor: 'grey',
+            gridLineColor: 'black',
             plotLines: [{
                 value: 0,
                 width: 1,
@@ -331,6 +331,7 @@ Highcharts.theme = {
         style: {
             color: 'black',
             fontSize: '24px',
+            margin:"20"
             // fontWeight: 'bold'
         }
     },
@@ -338,6 +339,8 @@ Highcharts.theme = {
         style: {
             color: 'black',
             fontSize: '20',
+            margin:"20"
+            //marginBottom:"10"
         }
     },
     tooltip: {
