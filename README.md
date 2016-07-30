@@ -73,6 +73,19 @@ Future prediction for number of trips based on month, type of day(weekday/weeken
 
 ![FutureDemandPrediction.png](https://bitbucket.org/repo/LpbXRr/images/999112961-FutureDemandPrediction.png)
 
+
+Dashboard 
+
+![Dashoboard.png](https://bitbucket.org/repo/LpbXRr/images/2119886499-Dashoboard.png)
+
+Data Visualization Weekday
+
+![dataVisualization.jpg](https://bitbucket.org/repo/LpbXRr/images/960626874-dataVisualization.jpg)
+
+Data Visualization Weekend
+![dataVisualizationWeekend.jpg](https://bitbucket.org/repo/LpbXRr/images/2669415847-dataVisualizationWeekend.jpg)
+
+
 **Team**
 
 * Mukul Ambulgekar
