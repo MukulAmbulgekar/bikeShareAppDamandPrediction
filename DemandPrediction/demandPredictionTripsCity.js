@@ -12,6 +12,13 @@ var newPredictedDataArray = {
     "Mountain View": [],
     "Redwood City": []
 };
+var newPredictedDataArray1 = {
+    "San Francisco": [],
+    "San Jose": [],
+    "Palo Alto": [],
+    "Mountain View": [],
+    "Redwood City": []
+};
 var cities = ["San Francisco", "San Jose", "Palo Alto", "Mountain View", "Redwood City"]
 var allData = [];
 var stationIdSelected = 70;
@@ -49,7 +56,11 @@ var allHours = [
     //var monthSelected = 'January';
 var stationsNames = [];
 $(function() {
-
+    $('#showActual').click(function() {
+        if ($('#showActual').prop('checked') === true) {
+            plotDemand();
+        }
+    })
     $.getJSON("/DemandPrediction/data/stations.json", function(data) {
         stationsNames = data;
         populateSelectList();
@@ -149,7 +160,8 @@ function getPrediction() {
         }
     });
     processData(predictedData);
-    if (newPredictedDataArray.length !== 0) {
+    processData1(predictedData);
+    if (newPredictedDataArray.length !== 0 || newPredictedDataArray1.length !== 0) {
         plotDemand();
     } else {
         alert("Sorry No prediction found for this combination")
@@ -209,6 +221,38 @@ function processData(predictedData) {
 
 }
 
+function processData1(predictedData) {
+    newPredictedDataArray1 = {
+        "San Francisco": [],
+        "San Jose": [],
+        "Palo Alto": [],
+        "Mountain View": [],
+        "Redwood City": []
+    };
+
+    if (predictedData.length > 0) {
+        _.forEach(allHours, function(eachHour) {
+            _.forEach(cities, function(cityName) {
+                var newPredictedData = {};
+                if (_.where(predictedData, {
+                        City: cityName
+                    }).length > 0) {
+                    newPredictedData.City = _.where(predictedData, {
+                        City: cityName
+                    })[0].City;
+                    newPredictedData.hours = eachHour;
+                    newPredictedData["Actual_Count"] = getAverage(_.pluck(_.where(predictedData, {
+                        hours: eachHour,
+                        City: cityName
+                    }), 'Actual_Count'))
+                    newPredictedDataArray1[cityName].push(newPredictedData)
+                }
+            })
+        })
+    }
+
+}
+
 function getAverage(data) {
 
     var dataNew = data;;
@@ -222,6 +266,53 @@ function getAverage(data) {
 }
 
 function plotDemand() {
+    var inputDataActual = [{
+        name: 'San Francisco',
+        data: _.pluck(newPredictedDataArray["San Francisco"], 'Predicted_Count')
+    }, {
+        name: 'San Francisco Actual',
+        data: _.pluck(newPredictedDataArray1["San Francisco"], 'Actual_Count')
+    }, {
+        name: 'San Jose',
+        data: _.pluck(newPredictedDataArray["San Jose"], 'Predicted_Count')
+    }, {
+        name: 'San Jose Actual',
+        data: _.pluck(newPredictedDataArray1["San Jose"], 'Actual_Count')
+    }, {
+        name: 'Mountain View Actual',
+        data: _.pluck(newPredictedDataArray1["Mountain View"], 'Actual_Count')
+    }, {
+        name: 'Mountain View',
+        data: _.pluck(newPredictedDataArray["Mountain View"], 'Predicted_Count')
+    }, {
+        name: 'Palo Alto',
+        data: _.pluck(newPredictedDataArray["Palo Alto"], 'Predicted_Count')
+    }, {
+        name: 'Palo Alto Actual',
+        data: _.pluck(newPredictedDataArray1["Palo Alto"], 'Actual_Count')
+    }, {
+        name: 'Redwood City',
+        data: _.pluck(newPredictedDataArray["Redwood City"], 'Predicted_Count')
+    }, {
+        name: 'Redwood City Actual',
+        data: _.pluck(newPredictedDataArray1["Redwood City"], 'Actual_Count')
+    }];
+    var inputData = [{
+        name: 'San Francisco',
+        data: _.pluck(newPredictedDataArray["San Francisco"], 'Predicted_Count')
+    }, {
+        name: 'San Jose',
+        data: _.pluck(newPredictedDataArray["San Jose"], 'Predicted_Count')
+    }, {
+        name: 'Mountain View',
+        data: _.pluck(newPredictedDataArray["Mountain View"], 'Predicted_Count')
+    }, {
+        name: 'Palo Alto',
+        data: _.pluck(newPredictedDataArray["Palo Alto"], 'Predicted_Count')
+    }, {
+        name: 'Redwood City',
+        data: _.pluck(newPredictedDataArray["Redwood City"], 'Predicted_Count')
+    }];
     // gradient boosting
     $('#gradientBoosting').highcharts({
         title: {
@@ -229,7 +320,7 @@ function plotDemand() {
             x: -20 //center
         },
         subtitle: {
-            text: '<br> Month: <b>' + months[monthSelected - 1].name + '</b> Type of Day: <b>' + daySelected + '</b><br> Rain:<b>' + rainSelected + '</b>' + '</b> Temp:<b>' + tempSelected + '</b>'
+            text: '<br> Month: <b>' + months[monthSelected - 1].name + '</b> Type of Day: <b>' + daySelected + '</b><br> Rain:<b>' + rainSelected + '</b>' + '</b> Temp: <b>(' + (tempSelected - 5) + ' - ' + (parseInt(tempSelected) + 5) + ')</b>'
 
         },
         xAxis: {
@@ -275,23 +366,77 @@ function plotDemand() {
             verticalAlign: 'middle',
             borderWidth: 0
         },
-        series: [{
-            name: 'San Francisco',
-            data: _.pluck(newPredictedDataArray["San Francisco"], 'Predicted_Count')
-        }, {
-            name: 'San Jose',
-            data: _.pluck(newPredictedDataArray["San Jose"], 'Predicted_Count')
-        }, {
-            name: 'Mountain View',
-            data: _.pluck(newPredictedDataArray["Mountain View"], 'Predicted_Count')
-        }, {
-            name: 'Palo Alto',
-            data: _.pluck(newPredictedDataArray["Palo Alto"], 'Predicted_Count')
-        }, {
-            name: 'Redwood City',
-            data: _.pluck(newPredictedDataArray["Redwood City"], 'Predicted_Count')
-        }]
+        series: ($('#showActual').prop('checked') === true) ? inputDataActual : inputData
     });
+    /*  $('#gradientBoosting1').highcharts({
+          title: {
+              text: 'Demand Prediction for Trips on hourly basis <b>', //+ gradientBoosting[0].name + '</b><br> Correlation :<b>' + gradientBoosting[0].COR + '</b>  RMSLE:<b>' + Math.round(gradientBoosting[0].RMSLE * 100) / 100 + '</b>',
+              x: -20 //center
+          },
+          subtitle: {
+              text: '<br> Month: <b>' + months[monthSelected - 1].name + '</b> Type of Day: <b>' + daySelected + '</b><br> Rain:<b>' + rainSelected + '</b>' + '</b> Temp: <b>(' + (tempSelected-5) + ' - ' + (parseInt(tempSelected)+5) +')</b>'
+
+          },
+          xAxis: {
+              categories: allHours,
+              //gridLineColor: 'transparent',
+              title: {
+                  text: ' Hours [0-23]',
+                  style: {
+                      fontSize: '20',
+                      color: "black"
+                  }
+              }
+          },
+          yAxis: {
+              title: {
+                  text: ' Total number of trips',
+                  style: {
+                      fontSize: '20',
+                      color: "black"
+                  }
+              },
+              gridLineColor: 'black',
+              plotLines: [{
+                  value: 0,
+                  width: 1,
+                  color: '#808080'
+              }]
+          },
+          tooltip: {
+              valueSuffix: ' Trips',
+              crosshairs: [{
+                  color: '#b2d6a8',
+                  opacity: '0.5'
+              }],
+              shared: true,
+              style: {
+                  fontSize: '22px'
+              }
+          },
+          legend: {
+              layout: 'vertical',
+              align: 'right',
+              verticalAlign: 'middle',
+              borderWidth: 0
+          },
+          series: [{
+              name: 'San Francisco',
+              data: _.pluck(newPredictedDataArray1["San Francisco"], 'Actual_Count')
+          }, {
+              name: 'San Jose',
+              data: _.pluck(newPredictedDataArray1["San Jose"], 'Actual_Count')
+          }, {
+              name: 'Mountain View',
+              data: _.pluck(newPredictedDataArray1["Mountain View"], 'Actual_Count')
+          }, {
+              name: 'Palo Alto',
+              data: _.pluck(newPredictedDataArray1["Palo Alto"], 'Actual_Count')
+          }, {
+              name: 'Redwood City',
+              data: _.pluck(newPredictedDataArray1["Redwood City"], 'Actual_Count')
+          }]
+      });*/
 }
 
 /**
@@ -314,8 +459,8 @@ Highcharts.wrap(Highcharts.Chart.prototype, 'getContainer', function(proceed) {
 
 
 Highcharts.theme = {
-    colors: ["#DF5353", "blue", "green", "yellow", "#ff0066", "#eeaaee",
-        "#55BF3B", "#DF5353", "#7798BF", "#aaeeee"
+    colors: ["#DF5353", "blue", "green", "yellow", "#ff0066",
+        "#7798BF", "#2B908F", "#f45b5b", "#55BF3B", "orange"
     ],
     chart: {
         backgroundColor: "#9bcdff",
@@ -331,16 +476,16 @@ Highcharts.theme = {
         style: {
             color: 'black',
             fontSize: '24px',
-            margin:"20"
-            // fontWeight: 'bold'
+            margin: "20"
+                // fontWeight: 'bold'
         }
     },
     subtitle: {
         style: {
             color: 'black',
             fontSize: '20',
-            margin:"20"
-            //marginBottom:"10"
+            margin: "20"
+                //marginBottom:"10"
         }
     },
     tooltip: {
