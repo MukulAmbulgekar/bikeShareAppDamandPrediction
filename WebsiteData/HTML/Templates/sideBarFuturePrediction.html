@@ -1,0 +1,39 @@
+<div>
+		<div class="form-group">
+			<label for="months">Select month:</label>
+			<select class="form-control" id="months">
+				<option value="1">Select Month</option>
+			</select>
+		</div>
+		<div class="form-group">
+			<label for="days">Select day:</label>
+			<select class="form-control" id="days">
+				<option value="Weekday">Select Day</option>
+			</select>
+		</div>
+		<div class="form-group">
+			<label for="rain">Select month:</label>
+			<select class="form-control" id="rain">
+				<option value="No">Select Rain</option>
+			</select>
+		</div>
+		<div class="form-group">
+			<label for="temprature">Temp</label><input type="range" name="points" id="temprature">
+		</div>
+		<div class="form-group">
+			<label for="showActual">Plot Actual </label>
+			<input type="checkbox" style="width: 20px; height: 20px;" id="showActual">
+		</div>
+<!--     <div class="checkbox" style="padding-left:20px">
+  <label  class="pull-left">Plot Actual </label> 
+  <input type="checkbox" id="showActual">
+</div> -->
+<div class="form-group">
+<button align="center" class ="btn btn-lg btn-success" onclick="getPredictionFuture()">Predict Trips</button>
+</div>
+</div>
+
+<script type="text/javascript">	
+	$.getScript('/WebsiteData/js/demandPredictionTripsCity.js',function(){
+	})
+</script>

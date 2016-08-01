@@ -143,7 +143,8 @@ function plotDemand() {
             valueSuffix: ' Trips',
             style: {
                 fontSize: '16px'
-            }
+            },
+            shared:true
         },
         legend: {
             layout: 'vertical',
@@ -367,7 +368,8 @@ Highcharts.theme = {
     },
     tooltip: {
         borderWidth: 0,
-        fontSize: '16px'
+        fontSize: '16px',
+        color:'black'
     },
     legend: {
         itemStyle: {

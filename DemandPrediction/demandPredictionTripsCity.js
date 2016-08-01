@@ -24,7 +24,7 @@ var allData = [];
 var stationIdSelected = 70;
 var monthSelected = 'July';
 var daySelected = 'Weekday';
-var tempSelected = 60;
+var tempSelected = 55;
 //var cloudSelected = 8;
 var rainSelected = 'No';
 var allHours = [
@@ -121,10 +121,10 @@ function getData() {
                         //console.log("allData", _.mean(_.pluck(allData, 'temp')))
                         $("#temprature").prop("max", _.max(_.pluck(allData, 'temp'))).slider("refresh");
                         $("#temprature").prop("min", _.min(_.pluck(allData, 'temp'))).slider("refresh");
-                        $("#temprature").prop("value", 60).slider("refresh");
-                        $("#cloudCover").prop("max", _.max(_.pluck(allData, 'Cloud'))).slider("refresh");
-                        $("#cloudCover").prop("min", _.min(_.pluck(allData, 'Cloud'))).slider("refresh");
-                        $("#cloudCover").prop("value", 4).slider("refresh");
+                        $("#temprature").prop("value", tempSelected).slider("refresh");
+                        /* $("#cloudCover").prop("max", _.max(_.pluck(allData, 'Cloud'))).slider("refresh");
+                         $("#cloudCover").prop("min", _.min(_.pluck(allData, 'Cloud'))).slider("refresh");
+                         $("#cloudCover").prop("value", 4).slider("refresh");*/
                         getPrediction();
                     })
                 })
@@ -315,9 +315,20 @@ function plotDemand() {
     }];
     // gradient boosting
     $('#gradientBoosting').highcharts({
+        chart: {
+            backgroundColor: "#9bcdff",
+            style: {
+                fontFamily: "Signika, serif"
+            },
+            height: '1000',
+            borderWidth: "2",
+            borderColor: "black",
+            type: 'spline'
+        },
         title: {
             text: 'Demand Prediction for Trips on hourly basis <b>', //+ gradientBoosting[0].name + '</b><br> Correlation :<b>' + gradientBoosting[0].COR + '</b>  RMSLE:<b>' + Math.round(gradientBoosting[0].RMSLE * 100) / 100 + '</b>',
-            x: -20 //center
+            x: -20
+                //center
         },
         subtitle: {
             text: '<br> Month: <b>' + months[monthSelected - 1].name + '</b> Type of Day: <b>' + daySelected + '</b><br> Rain:<b>' + rainSelected + '</b>' + '</b> Temp: <b>(' + (tempSelected - 5) + ' - ' + (parseInt(tempSelected) + 5) + ')</b>'
@@ -438,129 +449,3 @@ function plotDemand() {
           }]
       });*/
 }
-
-/**
- * Sand-Signika theme for Highcharts JS
- * @author Torstein Honsi
- */
-
-// Load the fonts
-Highcharts.createElement('link', {
-    href: 'https://fonts.googleapis.com/css?family=Signika:400,700',
-    rel: 'stylesheet',
-    type: 'text/css'
-}, null, document.getElementsByTagName('head')[0]);
-
-// Add the background image to the container
-Highcharts.wrap(Highcharts.Chart.prototype, 'getContainer', function(proceed) {
-    proceed.call(this);
-    this.container.style.background = 'url(http://www.highcharts.com/samples/graphics/sand.png)';
-});
-
-
-Highcharts.theme = {
-    colors: ["#DF5353", "blue", "green", "yellow", "#ff0066",
-        "#7798BF", "#2B908F", "#f45b5b", "#55BF3B", "orange"
-    ],
-    chart: {
-        backgroundColor: "#9bcdff",
-        style: {
-            fontFamily: "Signika, serif"
-        },
-        height: '1000',
-        borderWidth: "2",
-        borderColor: "black",
-        type: 'spline'
-    },
-    title: {
-        style: {
-            color: 'black',
-            fontSize: '24px',
-            margin: "20"
-                // fontWeight: 'bold'
-        }
-    },
-    subtitle: {
-        style: {
-            color: 'black',
-            fontSize: '20',
-            margin: "20"
-                //marginBottom:"10"
-        }
-    },
-    tooltip: {
-        borderWidth: 0,
-        fontSize: '16px'
-    },
-    legend: {
-        itemStyle: {
-            fontWeight: 'bold',
-            fontSize: '18px'
-        }
-    },
-    xAxis: {
-        labels: {
-            style: {
-                color: 'black',
-                fontSize: '20'
-            }
-        }
-    },
-    yAxis: {
-        labels: {
-            style: {
-                color: 'black',
-                fontSize: '20'
-            }
-        }
-    },
-    plotOptions: {
-        series: {
-            shadow: true
-        },
-        candlestick: {
-            lineColor: '#404048'
-        },
-        map: {
-            shadow: false
-        },
-        spline: {
-            dataLabels: {
-                enabled: true,
-                style: {
-                    fontSize: '20'
-                },
-            },
-            enableMouseTracking: true
-        }
-    },
-
-    // Highstock specific
-    navigator: {
-        xAxis: {
-            gridLineColor: '#D0D0D8'
-        }
-    },
-    /*    rangeSelector: {
-            buttonTheme: {
-                fill: 'white',
-                stroke: '#C0C0C8',
-                'stroke-width': 1,
-                states: {
-                    select: {
-                        fill: '#D0D0D8'
-                    }
-                }
-            }
-        },*/
-    scrollbar: {
-        trackBorderColor: '#C0C0C8'
-    },
-
-    // General
-    background2: '#E0E0E8'
-
-};
-
-// Apply the theme
-Highcharts.setOptions(Highcharts.theme);

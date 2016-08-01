@@ -33,13 +33,24 @@
 <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
 <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
 <script src="bower_components/geocomplete/jquery.geocomplete.js"></script>
-<script type="text/javascript" src="demandPredictionTripsCity.js"></script>
+<script type="text/javascript" src="/DemandPrediction/demandPredictionTripsCity.js"></script>
+<script type="text/javascript" src="/DemandPrediction/highchartTheme.js"></script>
 </head>
 <body>
-  <div class="col-md-12" style="background-color: #333;color: white;">
-   <h1 align="center">Future Demand Prediction - Trips</h1>
+  <nav class="navbar navbar-default" style="background-color: lightblue;color: white;text-shadow: 0 0 0 ">
+  <div class="container-fluid" style="font-size:24px !important;color: white !important;">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Prediction</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="/DemandPrediction/predictionTrips.html">Home</a></li>
+      <li><a href="/DemandPrediction/predictionTrips.html">Trips Preidiction</a></li>
+      <li><a href="/DemandPrediction/predictionAvalability.html">Avalability Prediction</a></li> 
+      <li><a href="/DemandPrediction/predictionTripsCityWise.html">Future Prediction</a></li> 
+    </ul>
+  </div>
+</nav>
 
- </div>
  <div>
    <div class="col-md-2">
     <h3 align="center"> Input Criteria</h3>
@@ -47,7 +58,7 @@
   <div class="col-md-10" align="center">
    <h3 > Prediction</h3>
  </div>
- <div class="col-md-2" style="background-color: grey !important;color: white;text-shadow: 0 0 0 !important;height:1000px">
+ <div class="col-md-2" style="background-color: grey !important;color: white; font-size:20px;text-shadow: 0 0 0 !important;height:1000px">
   <div class="form-group">
     <label>Month</label>
     <select style="display:inline-block"; id="items">
@@ -67,10 +78,11 @@
     <br>
     <label>Temp</label><input type="range" name="points" id="temprature">
     <br>
-    <div class="checkbox">
+    <div class="checkbox" style="padding-left:20px">
   <label  class="pull-left">Plot Actual </label> 
   <input type="checkbox" id="showActual">
 </div>
+<br>
 <br>
     <button onclick="getPrediction()">Predict Trips</button>
     <br>

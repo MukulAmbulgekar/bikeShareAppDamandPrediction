@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Prediction</title>
+
+  <!-- Bootstrap Core CSS -->
+  <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- MetisMenu CSS -->
+  <link href="../bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
+
+  <!-- Timeline CSS -->
+  <link href="../dist/css/timeline.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+
+  <!-- Morris Charts CSS -->
+  <link href="../bower_components/morrisjs/morris.css" rel="stylesheet">
+
+  <!-- Custom Fonts -->
+  <link href="../bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/WebsiteData/CSS/allCss.css">
+  <link rel="stylesheet" href="/WebsiteData/CSS/allCss2.css">
+</head>
+
+<body>
+  <div id="wrapper" class="myTheme">
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="" ><b style="font-size:22px">Demand Prediction</b></a>
+      </div>
+      <!-- /.navbar-header -->
+
+      <ul class="nav navbar-nav" style="font-size:20px !important">
+        <li ><a href="#trips" id='tripsPredictionId'>Trips Prediction</a></li>
+        <li><a href="#availability" id='availabilityPredictionId'>Availability Prediction</a></li> 
+        <li><a href="#futurePrediction" id='futurePredictionId'>Future Prediction</a></li> 
+      </ul>
+      <ul class="nav navbar-top-links navbar-right"> 
+        <!-- /.dropdown -->
+        <li class="dropdown">
+
+        </li>
+
+        <!-- /.dropdown -->
+      </ul>
+      <!-- /.navbar-top-links -->
+
+      <div class="navbar-default sidebar" role="navigation">
+        <div class="sidebar-nav navbar-collapse myTheme" style="font-size: 17px;" >
+          <!-- <br><br><br><br><br><br><br><br><br><br> -->
+<!--  <select id="items"  >
+    <option value="70">Select Station</option>
+  </select> -->
+  <div id="sideBarCustom">
+
+  </div>
+</div>
+<!-- /.sidebar-collapse -->
+</div>
+<!-- /.navbar-static-side -->
+</nav>
+
+<div id="page-wrapper" class="myTheme">
+  <div class="row">
+    <div class="col-lg-12" style="padding-bottom: 20px;">
+      <h3 class="page-header" style="margin:5px">Real Time Status</h3>
+    </div>
+    <!-- /.col-lg-12 -->
+  </div>
+  <!-- /. first row ends -->
+  <div class="row">
+    <div class="col-lg-3 col-md-6">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <div class="row">
+            <div class="col-xs-3">
+              <i class="fa fa-signal fa-5x"></i>
+            </div>
+            <div class="col-xs-9 text-right">
+              <div id="stationNameRealTimeAvailableBikes"></div>
+              <div id="stationNameRealTimeAvailableBikesCount" class="huge"></div>
+
+              <div>Available Bikes</div>
+            </div>
+          </div>
+        </div>
+        <a href="#">
+          <div class="panel-footer">
+            <span class="pull-left">View Details</span>
+            <div class="pull-right" id="refreshValues1"><i class="fa fa fa-refresh 2x"></i></div>
+            <div class="clearfix"></div>
+          </div>
+        </a>
+      </div>
+    </div>
+    <!-- first square completed -->
+
+    <div class="col-lg-3 col-md-6">
+      <div class="panel panel-green">
+        <div class="panel-heading">
+          <div class="row">
+            <div class="col-xs-3">
+              <i class="fa fa-tasks fa-5x"></i>
+            </div>
+            <div class="col-xs-9 text-right">
+             <div id="stationNameRealTimeAvailableDocks"></div>
+             <div id="stationNameRealTimeAvailableDocksCount" class="huge"></div>
+             <div>Available Docks</div>
+           </div>
+         </div>
+       </div>
+       <a href="#">
+        <div class="panel-footer">
+          <span class="pull-left">View Details</span>
+          <div class="pull-right" id="refreshValues2"><i class="fa fa fa-refresh 2x"></i></div>
+          <div class="clearfix"></div>
+        </div>
+      </a>
+    </div>
+  </div>
+  <div class="col-lg-3 col-md-6">
+    <div class="panel panel-yellow">
+      <div class="panel-heading">
+        <div class="row">
+          <div class="col-xs-3">
+            <i class="fa fa-map-marker fa-5x"></i>
+          </div>
+          <div class="col-xs-9 text-right">
+            <div id="stationNameRealTimeTotalDocks"></div>
+            <div id="stationNameRealTimeTotalDocksCount" class="huge"></div>
+            <div>Total Docks</div>
+          </div>
+        </div>
+      </div>
+      <a href="#">
+        <div class="panel-footer">
+          <span class="pull-left">View Details</span>
+          <div class="pull-right" id="refreshValues2"><i class="fa fa fa-refresh 2x"></i></div>
+          <div class="clearfix"></div>
+        </div>
+      </a>
+    </div>
+  </div>
+  <div class="col-lg-3 col-md-6">
+    <div class="panel panel-red">
+      <div class="panel-heading">
+        <div class="row">
+          <div class="col-xs-3">
+            <i class="fa fa-bar-chart fa-5x"></i>
+          </div>
+          <div class="col-xs-9 text-right">
+            <div id="stationNameRealTimeDemandName"></div>
+            <div id="stationNameRealTimeDemand" class="huge"></div>
+            <div>Demand</div>
+          </div>
+        </div>
+      </div>
+      <a href="#">
+        <div class="panel-footer">
+          <span class="pull-left">View Details</span>
+          <div class="pull-right" id="refreshValues2"><i class="fa fa fa-refresh 2x"></i></div>
+          <div class="clearfix"></div>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+<!-- /. second row ends  -->
+<div class="row">
+  <!-- displaying page column -->
+  <div class="col-lg-12 col-md-12 col-sm-12">
+    <div class="panel panel-default">
+      <div class="panel-heading text-center" style="font-size:24px;">
+        <i class="fa fa-bar-chart-o fa-fw"></i><label style="color:black" id="chartTitle"></label>
+        <div class="pull-right">
+        </div>
+      </div>
+      <!-- /.panel-heading -->
+      <div class="panel-body" class="col-lg-12 col-md-12 col-sm-12">
+        <!--<div id="morris-area-chart"></div> -->
+        <div id="x1" class="col-lg-12 col-md-12 col-sm-12" style="background-color: #d9534f"></div>
+      </div>
+      <!-- /.panel-body -->
+    </div>
+  </div>
+  <!-- /.col-lg-8 -->
+
+  <!-- ADDDDD HERRRRREEEE -->
+  <!-- Menu option snap shot -->
+ 
+<!-- --
+  <!-- row 3 item 4 closed -->
+  <!-- row 3 completed -->
+  <!-- row 4 started --> 
+  <!--second item finished  -->
+  <!-- -->
+  <!-- md-3 closed -->
+</div>
+<!--row 4 completed -->
+<!-- -- > 
+
+
+</div>
+<!-- menu option completed -->
+<!-- /.row -->
+<!-- /#page-wrapper -->
+<!-- /#wrapper -->
+
+<!-- jQuery -->
+<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+<!-- Metis Menu Plugin JavaScript -->
+<script src="../bower_components/metisMenu/dist/metisMenu.min.js"></script>
+
+<!-- Morris Charts JavaScript -->
+<script src="../bower_components/raphael/raphael-min.js"></script>
+<script src="../bower_components/morrisjs/morris.min.js"></script>
+
+
+<!-- Custom Theme JavaScript -->
+<script src="../dist/js/sb-admin-2.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.16/d3.js"></script>
+<script src="http://code.highcharts.com/highcharts.js"></script>
+<script src="http://code.highcharts.com/modules/exporting.js"></script>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+<script type="text/javascript" src="/WebsiteData/js/realtimeSetValues.js"></script>
+<script src="../bower_components/morrisjs/morris.min.js"></script>
+<script type="text/javascript" src="/WebsiteData/js/highchartTheme.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js"></script>
+<meta content="authenticity_token" name="csrf-param" />
+
+<!-- <script type="text/javascript" src="/WebsiteData/js/demand.js"></script> -->
+<!-- <script type="text/javascript" src="/WebsiteData/js/demandAvalability.js"></script> -->
+
+<script>
+         // initial page
+
+         $('#tripsPredictionId').on('click',loadTripsPrediction);
+         $('#availabilityPredictionId').on('click',loadAvailabilityPrediction);
+         $('#futurePredictionId').on('click',loadFuturePrediction);
+
+        ////////-----------------------------routing functions------------------------////////
+        switch(location.hash.slice(1)){
+          case 'availability':
+          loadAvailabilityPrediction();
+          break;
+          case 'futurePrediction':
+          loadFuturePrediction();
+          break;
+          default:
+          loadTripsPrediction();
+          break;
+        }
+
+        function loadTripsPrediction(evt){
+
+         $('#x1').empty();
+         $('#sideBarCustom').empty();
+         $('#sideBarCustom').load('/WebsiteData/HTML/Templates/sideBarTripsPrediction.html');
+         $('#x1').load('/WebsiteData/HTML/Templates/tripsPrediction.html',function(){
+         });  
+         $("#chartTitle").html('Trips Prediction') ; 
+       }
+
+       function loadAvailabilityPrediction(evt){
+         $('#x1').empty();
+         $('#sideBarCustom').empty();
+         $('#sideBarCustom').load('/WebsiteData/HTML/Templates/sideBarAvailabilityPrediction.html');
+         $('#x1').load('/WebsiteData/HTML/Templates/availabilityPrediction.html',function(){
+         }); 
+         $("#chartTitle").html('Availability Prediction') ; 
+
+       }
+
+       function loadFuturePrediction (evt){
+         $('#x1').empty();
+         $('#sideBarCustom').empty();
+          $('#sideBarCustom').load('/WebsiteData/HTML/Templates/sideBarFuturePrediction.html');
+         $('#x1').load('/WebsiteData/HTML/Templates/futurePrediction.html',function(){
+         }); 
+         $("#chartTitle").html('Future Prediction') ;  
+       }
+     </script>
+   </body>
+
+   </html>

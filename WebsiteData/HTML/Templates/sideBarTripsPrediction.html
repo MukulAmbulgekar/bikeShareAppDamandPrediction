@@ -1,0 +1,94 @@
+  <div class="form-group">
+    <label for="stationsTrips">Select station:</label>
+    <select class="form-control" id="stationsTrips" onchange="getPredictionTrips();">
+      <option value="70">Select Station</option>
+    </select>
+  </div>
+  <div id="datepicker"></div>
+  <br>
+  <table style="font-size:20px" class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Method</th>
+        <th>RSML Error</th>
+        <th>COR</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Gradient Boosting</td>
+        <td id="gradientRSML"></td>
+        <td id="gradientCOR"></td>
+      </tr>
+      <tr>
+        <td>Random Forest</td>
+        <td id="randomRSML"></td>
+        <td id="randomCOR"></td>
+      </tr>
+      <tr>
+        <td>Extra Trees Regressor</td>
+        <td id="extraRSML"></td>
+        <td id="extraCOR"></td>
+      </tr>
+      <tr>
+        <td>Ada Boosting</td>
+        <td id="adaRSML"></td>
+        <td id="adaCOR"></td>
+      </tr>
+    </tbody>
+  </table>
+  <table style="font-size:20px" class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Features</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Working Day (Weekday/Weekend)</td>
+      </tr>
+      <tr>
+        <td>Month</td>
+      </tr>
+      <tr>
+        <td>Hour</td>
+      </tr>
+      <tr>
+        <td>Day</td>
+      </tr>
+      <tr>
+        <td>Peak Hour(7AM-9AM,5PM-7PM)</td>
+      </tr>
+      <tr>
+        <td>Temprature</td>
+      </tr>
+      <tr>
+        <td>Rain</td>
+      </tr>
+      <tr>
+        <td>Cloudy</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <script>
+  $( function() {
+    $( "#datepicker" ).datepicker({
+      changeMonth: true,
+      changeYear: true,
+      yearRange: '2014:2015',
+      beforeShowDay: function (date) {
+        if (date.getDate() >20) {
+          return [true, ''];
+        }
+        return [false, ''];
+      },
+      defaultDate: new Date(2015, 05, 23),
+      onSelect: function (date) {
+        getPredictionTrips(date);
+      }});
+  } );
+   $.getScript('/WebsiteData/js/demand.js',function(){
+    
+   })
+</script>
