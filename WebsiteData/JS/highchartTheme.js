@@ -25,8 +25,8 @@ Highcharts.theme = {
         style: {
             fontFamily: "Signika, serif"
         },
-       // borderWidth: "2",
-       // borderColor: "black"
+        // borderWidth: "2",
+        // borderColor: "black"
     },
     title: {
         style: {
@@ -45,8 +45,14 @@ Highcharts.theme = {
         }
     },
     tooltip: {
-        borderWidth: 0,
-        fontSize: '16px'
+        crosshairs: [{
+            color: '#b2d6a8',
+            opacity: '0.5'
+        }],
+        shared: true,
+        style: {
+            fontSize: '24px'
+        }
     },
     legend: {
         itemStyle: {

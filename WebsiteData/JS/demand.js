@@ -2,7 +2,7 @@ var randomForest = [];
 var gradientBoosting = [];
 var adaBoostingTrips = [];
 var extraTreesClassifierTrips = [];
-var dateSelected = 'Mar 23, 2015';
+var dateSelected = 'June 23, 2015';
 var fromDate;
 var toDate;
 var stationIdSelected = 70;
@@ -87,6 +87,7 @@ function populateSelectList() {
     }
     //$('#items').append("<option value='70'>San Francisco Caltrain (Townsend at 4th) </option>");
     $('#stationsTrips').append(option);
+    $("#stationsTrips").val('70');
 }
 
 function generateTableValues() {
@@ -139,13 +140,6 @@ function plotDemand() {
                 color: '#808080'
             }]
         },
-        tooltip: {
-            valueSuffix: ' Trips',
-            style: {
-                fontSize: '16px'
-            },
-            shared: true
-        },
         legend: {
             layout: 'vertical',
             align: 'right',
@@ -193,12 +187,6 @@ function plotDemand() {
                 color: '#808080'
             }]
         },
-        tooltip: {
-            valueSuffix: ' Trips',
-            style: {
-                fontSize: '16px'
-            }
-        },
         legend: {
             layout: 'vertical',
             align: 'right',
@@ -245,12 +233,6 @@ function plotDemand() {
                 color: '#808080'
             }]
         },
-        tooltip: {
-            valueSuffix: ' Trips',
-            style: {
-                fontSize: '16px'
-            }
-        },
         legend: {
             layout: 'vertical',
             align: 'right',
@@ -295,12 +277,6 @@ function plotDemand() {
                 width: 1,
                 color: '#808080'
             }]
-        },
-        tooltip: {
-            valueSuffix: ' Trips',
-            style: {
-                fontSize: '16px'
-            }
         },
         legend: {
             layout: 'vertical',
@@ -367,15 +343,7 @@ Highcharts.theme = {
         }
     },
     tooltip: {
-        valueSuffix: ' Trips',
-        crosshairs: [{
-            color: '#b2d6a8',
-            opacity: '0.5'
-        }],
-        shared: true,
-        style: {
-            fontSize: '22px'
-        }
+        valueSuffix: ' Trips'
     },
     legend: {
         itemStyle: {

@@ -1,24 +1,27 @@
 <div>
+<h3>Input Criteria</h3>
 		<div class="form-group">
 			<label for="months">Select month:</label>
 			<select class="form-control" id="months">
-				<option value="1">Select Month</option>
+				<!-- <option value="1">Select Month</option> -->
 			</select>
 		</div>
 		<div class="form-group">
 			<label for="days">Select day:</label>
 			<select class="form-control" id="days">
-				<option value="Weekday">Select Day</option>
+				<!-- <option value="Weekday">Select Day</option> -->
 			</select>
 		</div>
 		<div class="form-group">
-			<label for="rain">Select month:</label>
+			<label for="rain">Select rain:</label>
 			<select class="form-control" id="rain">
-				<option value="No">Select Rain</option>
+				<!-- <option value="No">Select Rain</option> -->
 			</select>
 		</div>
 		<div class="form-group">
-			<label for="temprature">Temp</label><input type="range" name="points" id="temprature">
+			<label for="temprature">Temp</label>
+			<input type="text" style="color:black;width:20%" id='selectedTemp'>&nbsp;&#8457;
+			<input type="range" name="points" id="temprature">
 		</div>
 		<div class="form-group">
 			<label for="showActual">Plot Actual </label>
@@ -29,9 +32,13 @@
   <input type="checkbox" id="showActual">
 </div> -->
 <div class="form-group">
-<button align="center" class ="btn btn-lg btn-success" onclick="getPredictionFuture()">Predict Trips</button>
+<button align="center" class ="btn btn-lg btn-success" onclick="getPredictionFuture()" style="background-color: #5cb85c;
+    color: white;">Predict Trips</button>
 </div>
 </div>
+
+
+
 
 <script type="text/javascript">	
 	$.getScript('/WebsiteData/js/demandPredictionTripsCity.js',function(){

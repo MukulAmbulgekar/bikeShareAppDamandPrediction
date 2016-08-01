@@ -42,7 +42,7 @@
       <!-- /.navbar-header -->
 
       <ul class="nav navbar-nav" style="font-size:20px !important">
-        <li ><a href="#trips" id='tripsPredictionId'>Trips Prediction</a></li>
+      <li class="active"><a  href="#trips" id='tripsPredictionId'>Trips Prediction</a></li>
         <li><a href="#availability" id='availabilityPredictionId'>Availability Prediction</a></li> 
         <li><a href="#futurePrediction" id='futurePredictionId'>Future Prediction</a></li> 
       </ul>
@@ -182,7 +182,7 @@
   <div class="col-lg-12 col-md-12 col-sm-12">
     <div class="panel panel-default">
       <div class="panel-heading text-center" style="font-size:24px;">
-        <i class="fa fa-bar-chart-o fa-fw"></i><label style="color:black" id="chartTitle"></label>
+        <i class="fa fa-bar-chart-o fa-fw"></i><label style="color:black;display:grid !important" id="chartTitle"></label>
         <div class="pull-right">
         </div>
       </div>
@@ -198,7 +198,7 @@
 
   <!-- ADDDDD HERRRRREEEE -->
   <!-- Menu option snap shot -->
- 
+
 <!-- --
   <!-- row 3 item 4 closed -->
   <!-- row 3 completed -->
@@ -232,7 +232,7 @@
 
 
 <!-- Custom Theme JavaScript -->
-<script src="../dist/js/sb-admin-2.js"></script>
+<!-- <script src="../dist/js/sb-admin-2.js"></script> -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.16/d3.js"></script>
@@ -240,6 +240,7 @@
 <script src="http://code.highcharts.com/modules/exporting.js"></script>
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
 <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+
 <script type="text/javascript" src="/WebsiteData/js/realtimeSetValues.js"></script>
 <script src="../bower_components/morrisjs/morris.min.js"></script>
 <script type="text/javascript" src="/WebsiteData/js/highchartTheme.js"></script>
@@ -251,6 +252,12 @@
 
 <script>
          // initial page
+         var selector = '.nav li';
+
+         $(selector).on('click', function(){
+          $(selector).removeClass('active');
+          $(this).addClass('active');
+        });
 
          $('#tripsPredictionId').on('click',loadTripsPrediction);
          $('#availabilityPredictionId').on('click',loadAvailabilityPrediction);
@@ -292,7 +299,7 @@
        function loadFuturePrediction (evt){
          $('#x1').empty();
          $('#sideBarCustom').empty();
-          $('#sideBarCustom').load('/WebsiteData/HTML/Templates/sideBarFuturePrediction.html');
+         $('#sideBarCustom').load('/WebsiteData/HTML/Templates/sideBarFuturePrediction.html');
          $('#x1').load('/WebsiteData/HTML/Templates/futurePrediction.html',function(){
          }); 
          $("#chartTitle").html('Future Prediction') ;  

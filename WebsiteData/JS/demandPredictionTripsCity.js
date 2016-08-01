@@ -2,7 +2,7 @@ var predictedData = [];
 var gradientBoosting = [];
 var adaBoostingTrips = [];
 var extraTreesClassifierTrips = [];
-var dateSelected = 'Mar 23, 2015';
+//var dateSelected = 'Mar 23, 2015';
 var fromDate;
 var toDate;
 var newPredictedDataArray = {
@@ -119,9 +119,10 @@ function getData() {
                     $.getJSON("/DemandPrediction/Demand Analysis/Prediction/GradientBoosting/Redwood City_Prediction_GB.json", function(rw) {
                         allData = allData.concat(rw);
                         //console.log("allData", _.mean(_.pluck(allData, 'temp')))
-                        $("#temprature").attr("max", _.max(_.pluck(allData, 'temp'))).slider("refresh");
-                        $("#temprature").attr("min", _.min(_.pluck(allData, 'temp'))).slider("refresh");
-                        $("#temprature").attr("value", tempSelected).slider("refresh");
+                         $("#temprature").attr("max", _.max(_.pluck(allData, 'temp')))
+                         $("#temprature").attr("min", _.min(_.pluck(allData, 'temp')))
+                          $("#temprature").attr("value", '50');
+                        getPredictionFuture();
                     })
                 })
             })
@@ -145,6 +146,7 @@ function getPredictionFuture() {
     if ($("#temprature").val() !== undefined) {
         tempSelected = $("#temprature").val();
     }
+     $("#selectedTemp").val($("#temprature").val());
     predictedData = [];
     _.forEach(allData, function(eachData) {
         eachData.time = new Date(eachData.time);
@@ -183,6 +185,9 @@ function populateSelectList() {
     $('#months').append(option);
     $('#days').append(option1);
     $('#rain').append(option2);
+       $('#months').val("5");
+    $('#days').val("Weekday");
+    $('#rain').val("No");
 }
 
 function processData(predictedData) {

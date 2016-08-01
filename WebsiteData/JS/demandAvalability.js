@@ -2,7 +2,7 @@ var randomForestAvailability = [];
 var gradientBoostingAvailability = [];
 var adaBoostingAvailability = [];
 var extraTreesClassifierAvailability = [];
-var dateSelectedAvailability = 'Mar 23, 2015';
+var dateSelectedAvailability = 'Jun 23, 2015';
 var fromDateAvailability;
 var toDateAvailability;
 var stationIdSelectedAvailability = 70;
@@ -87,6 +87,7 @@ function populateSelectList() {
     }
     //$('#items').append("<option value='70'>San Francisco Caltrain (Townsend at 4th) </option>");
     $('#stationsAvalability').append(option);
+    $("#stationsAvalability").val('70');
 }
 
 function generateTableValues() {
@@ -139,12 +140,6 @@ function plotDemand() {
                 color: '#808080'
             }]
         },
-        tooltip: {
-            valueSuffix: ' Bikes',
-            style: {
-                fontSize: '16px'
-            }
-        },
         legend: {
             layout: 'vertical',
             align: 'right',
@@ -192,12 +187,6 @@ function plotDemand() {
                 color: '#808080'
             }]
         },
-        tooltip: {
-            valueSuffix: ' Bikes',
-            style: {
-                fontSize: '16px'
-            }
-        },
         legend: {
             layout: 'vertical',
             align: 'right',
@@ -244,12 +233,6 @@ function plotDemand() {
                 color: '#808080'
             }]
         },
-        tooltip: {
-            valueSuffix: ' Bikes',
-            style: {
-                fontSize: '16px'
-            }
-        },
         legend: {
             layout: 'vertical',
             align: 'right',
@@ -294,12 +277,6 @@ function plotDemand() {
                 width: 1,
                 color: '#808080'
             }]
-        },
-        tooltip: {
-            valueSuffix: ' Bikes',
-            style: {
-                fontSize: '16px'
-            }
         },
         legend: {
             layout: 'vertical',
@@ -362,10 +339,6 @@ Highcharts.theme = {
             fontSize: '16px',
         }
     },
-    tooltip: {
-        borderWidth: 0,
-        fontSize: '16px'
-    },
     legend: {
         itemStyle: {
             fontWeight: 'bold',
@@ -397,6 +370,15 @@ Highcharts.theme = {
         },
         map: {
             shadow: false
+        },
+        line: {
+            dataLabels: {
+                enabled: false,
+                style: {
+                    fontSize: '20'
+                },
+            },
+            enableMouseTracking: true
         }
     },
 
@@ -408,14 +390,6 @@ Highcharts.theme = {
     },
     tooltip: {
         valueSuffix: ' Bikes',
-        crosshairs: [{
-            color: '#b2d6a8',
-            opacity: '0.5'
-        }],
-        shared: true,
-        style: {
-            fontSize: '22px'
-        }
     },
     rangeSelector: {
         buttonTheme: {
