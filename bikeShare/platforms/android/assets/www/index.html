@@ -33,6 +33,7 @@
 <script type="text/javascript" src="clusterMonths.js"></script>
 <script type="text/javascript" src="startingEnding.js"></script>
 <script type="text/javascript" src="clusterDays.js"></script>
+
 <script src="bower_components/geocomplete/jquery.geocomplete.js"></script>
 
 
@@ -50,8 +51,8 @@
       $scope.uri = uri;
       $scope.stations = data.stationBeanList;
     }
-    });
-  </script>
+  });
+</script>
 </head>
 <body id="angularApp" ng-app="myApp" ng-controller="myCtrl">
 
@@ -64,17 +65,13 @@
         </div>
         <ul class="nav navbar-nav textColor">
           <li><a href="#pageone" data-transition="slide">Real Time Analysis</a></li>
-          <li><a href="#pagetwo" data-transition="slide">Trips Analysis</a></li>
-          <li><a href="#pagethree" data-transition="flip">Starting Ending Trips</a></li>
-          <li><a href="#pagefour" data-transition="flip">Hourly/Weekly Analysis</a></li>
-          <li><a href="#pagefour" data-transition="flip">Users/Trips/Stations/Docks Analysis</a></li>
-          <li><a href="#pagethree" data-transition="flip">Starting Ending Trips</a></li>
-          <li><a href="#pagethree" data-transition="flip">Stations/Bikes Analysis</a></li>
-          <li><a href="#cluster" data-transition="flip">Stations Cluster</a></li>
-          <li><a href="#clusterHrs" data-transition="flip">Hours Cluster</a></li>
-          <li><a href="#clusterDys" data-transition="flip">Days Cluster</a></li>
-          <li><a href="#clusterMnths" data-transition="flip">Months Cluster</a></li>
-          <li><a href="VirtualRealData/virtualRealData.html" data-transition="slide">Virtual Data Visualization</a></li>
+          <!-- <li><a href="#pagethree" data-transition="flip">Starting Ending Trips</a></li> -->
+          <li><a href="#pagefour" data-transition="slide">Users/Trips/Stations/Docks Analysis</a></li>
+          <li><a href="#cluster" data-transition="slide">Stations Cluster</a></li>
+          <li><a href="#clusterHrs" data-transition="slide">Hours Cluster</a></li>
+          <li><a href="#clusterDys" data-transition="slide">Days Cluster</a></li>
+          <li><a href="#clusterMnths" data-transition="slide">Months Cluster</a></li>
+          <li><a href="#startingStations" data-transition="slide">Top Five Analysis</a></li>
           <li><a href="#suggestStation" onclick="suggestStation()" data-transition="slide">Suggest a Station</a></li>
         </ul>
       </div>
@@ -294,6 +291,136 @@
 
   <div data-role="main" class="ui-content">
     <div id="cityWiseStationsData"></div>
+  </div>
+
+  <div data-role="footer" data-theme="b" style="text-align:center;">
+    <div data-role="controlgroup" data-type="horizontal">
+      Copyrights&#169Team 5 Smart City
+    </div>
+  </div>
+</div>
+<div data-role="page" id="startingStations">
+  <div data-role="header" data-theme="b">
+    <a href="#myPanel1" class="ui-btn ui-icon-grid ui-btn-icon-left">Menu</a>
+    <h1>Bike Share App</h1>
+    <a href="#myPanel2" class="ui-btn ui-icon-gear ui-btn-icon-left">Settings</a>
+    <div data-role="navbar">
+      <ul>
+        <li><a href="#startingStations" data-transition="slide">Staring</a></li>
+        <li><a href="#endingStations" data-transition="slide">Ending</a></li>
+        <li><a href="#startingRoutes" data-transition="slide">Routes</a></li>
+        <li><a href="#popularHours" data-transition="slide">Hours</a></li>
+        <li><a href="#popularDays" data-transition="slide">Days</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div data-role="main" class="ui-content">
+    <table class="table table-striped" style="font-size: 20px; border: 3px solid black;border-color: #337ab7;"><caption class="text-center"style="font-weight:bold" >Most Popular Starting Stations - 2015 </caption> <thead> <tr> <th>Station Name</th> <th>Rides</th>  </tr> </thead> <tbody> <tr> <td>San Francisco Caltrain (Townsend at 4th)</td> <td>26304</td> </tr> <tr> <td>San Francisco Caltrain 2 (330 Townsend)</td> <td>21758</td> </tr> <tr> <td>Harry Bridges Plaza (Ferry Building)</td> <td>17255</td></tr><tr> <td>Temporary Transbay Terminal (Howard at Beale)</td><td>14436</td> </tr><tr> <td>Embarcadero at Sansome</td><td>14158</td> </tr> </tbody> </table>
+  </div>
+
+  <div data-role="footer" data-theme="b" style="text-align:center;">
+    <div data-role="controlgroup" data-type="horizontal">
+      Copyrights&#169Team 5 Smart City
+    </div>
+  </div>
+</div>
+<div data-role="page" id="endingStations">
+  <div data-role="header" data-theme="b">
+    <a href="#myPanel1" class="ui-btn ui-icon-grid ui-btn-icon-left">Menu</a>
+    <h1>Bike Share App</h1>
+    <a href="#myPanel2" class="ui-btn ui-icon-gear ui-btn-icon-left">Settings</a>
+    <div data-role="navbar">
+      <ul>
+       <li><a href="#startingStations" data-transition="slide">Staring</a></li>
+       <li><a href="#endingStations" data-transition="slide">Ending</a></li>
+       <li><a href="#startingRoutes" data-transition="slide">Routes</a></li>
+       <li><a href="#popularHours" data-transition="slide">Hours</a></li>
+       <li><a href="#popularDays" data-transition="slide">Days</a></li>
+     </ul>
+   </div>
+ </div>
+
+ <div data-role="main" class="ui-content">
+   <table class="table table-striped" style="font-size: 20px; border: 3px solid black;border-color: #337ab7;"> <caption class="text-center" style="font-weight:bold">Most Popular Destinations - 2015 </caption> <thead> <tr> <th>Station Name</th> <th>Rides</th>  </tr> </thead> <tbody> <tr> <td>San Francisco Caltrain (Townsend at 4th)</td> <td>34806</td> </tr> <tr> <td>San Francisco Caltrain 2 (330 Townsend)</td> <td>22523</td> </tr> <tr> <td>Harry Bridges Plaza (Ferry Building)</td> <td>17810</td></tr><tr> <td>2nd at Townsend</td><td>15463</td> </tr><tr> <td>Townsend at 7th</td><td>15422</td> </tr> </tbody> </table>
+ </div>
+
+ <div data-role="footer" data-theme="b" style="text-align:center;">
+  <div data-role="controlgroup" data-type="horizontal">
+    Copyrights&#169Team 5 Smart City
+  </div>
+</div>
+</div>
+<div data-role="page" id="startingRoutes">
+  <div data-role="header" data-theme="b">
+    <a href="#myPanel1" class="ui-btn ui-icon-grid ui-btn-icon-left">Menu</a>
+    <h1>Bike Share App</h1>
+    <a href="#myPanel2" class="ui-btn ui-icon-gear ui-btn-icon-left">Settings</a>
+    <div data-role="navbar">
+      <ul>
+        <li><a href="#startingStations" data-transition="slide">Staring</a></li>
+        <li><a href="#endingStations" data-transition="slide">Ending</a></li>
+        <li><a href="#startingRoutes" data-transition="slide">Routes</a></li>
+        <li><a href="#popularHours" data-transition="slide">Hours</a></li>
+        <li><a href="#popularDays" data-transition="slide">Days</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div data-role="main" class="ui-content">
+    <table class="table table-striped" style="font-size: 20px; border: 3px solid black;border-color: #337ab7;"> <caption class="text-center"style="font-weight:bold">Most Popular Routes - 2015 </caption> <thead> <tr> <th>From Station</th>   <th>To Station</th><th>Rides</th>  </tr> </thead> <tbody> <tr> <td>San Francisco Caltrain 2 (330 Townsend) </td> <td> Townsend at 7th</td><td>3748</td> </tr> <tr> <td>Harry Bridges Plaza (Ferry Building) </td> <td> Embarcadero at Sansome</td><td>3145</td> </tr><tr> <td>2nd at Townsend </td> <td> Harry Bridges Plaza (Ferry Building)</td><td>2973</td> </tr><tr> <td>Townsend at 7th </td> <td> San Francisco Caltrain 2 (330 Townsend)</td><td>2734</td> </tr><tr> <td>Harry Bridges Plaza (Ferry Building) </td> <td> 2nd at Townsend</td><td>2640</td> </tr> </tbody> </table>
+  </div>
+
+  <div data-role="footer" data-theme="b" style="text-align:center;">
+    <div data-role="controlgroup" data-type="horizontal">
+      Copyrights&#169Team 5 Smart City
+    </div>
+  </div>
+</div>
+<div data-role="page" id="popularHours">
+  <div data-role="header" data-theme="b">
+    <a href="#myPanel1" class="ui-btn ui-icon-grid ui-btn-icon-left">Menu</a>
+    <h1>Bike Share App</h1>
+    <a href="#myPanel2" class="ui-btn ui-icon-gear ui-btn-icon-left">Settings</a>
+    <div data-role="navbar">
+      <ul>
+        <li><a href="#startingStations" data-transition="slide">Staring</a></li>
+        <li><a href="#endingStations" data-transition="slide">Ending</a></li>
+        <li><a href="#startingRoutes" data-transition="slide">Routes</a></li>
+        <li><a href="#popularHours" data-transition="slide">Hours</a></li>
+        <li><a href="#popularDays" data-transition="slide">Days</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div data-role="main" class="ui-content">
+    <table class="table table-striped" style="font-size: 20px; border: 3px solid black;border-color: #337ab7;"><caption class="text-center" style="font-weight:bold">Most Popular Hours - 2015 </caption> <thead> <tr> <th>Hours</th> <th>Rides</th>  </tr> </thead> <tbody> <tr> <td>8:00 AM - 9:00 AM</td> <td>46064</td> </tr> <tr> <td>5:00 PM - 6:00 PM</td> <td>41397</td> </tr> <tr> <td>9:00 AM - 10:00 AM</td> <td>31871</td></tr><tr> <td>4:00 PM - 5:00 PM</td><td>28631</td> </tr><tr> <td>6:00 PM - 7:00 PM</td><td>27734</td> </tr> </tbody> </table>
+  </div>
+
+  <div data-role="footer" data-theme="b" style="text-align:center;">
+    <div data-role="controlgroup" data-type="horizontal">
+      Copyrights&#169Team 5 Smart City
+    </div>
+  </div>
+</div>
+<div data-role="page" id="popularDays">
+  <div data-role="header" data-theme="b">
+    <a href="#myPanel1" class="ui-btn ui-icon-grid ui-btn-icon-left">Menu</a>
+    <h1>Bike Share App</h1>
+    <a href="#myPanel2" class="ui-btn ui-icon-gear ui-btn-icon-left">Settings</a>
+    <div data-role="navbar">
+      <ul>
+        <li><a href="#startingStations" data-transition="slide">Staring</a></li>
+        <li><a href="#endingStations" data-transition="slide">Ending</a></li>
+        <li><a href="#startingRoutes" data-transition="slide">Routes</a></li>
+        <li><a href="#popularHours" data-transition="slide">Hours</a></li>
+        <li><a href="#popularDays" data-transition="slide">Days</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div data-role="main" class="ui-content">
+    <table class="table table-striped" style="font-size: 20px; border: 3px solid black;border-color: #337ab7;"><caption class="text-center" style="font-weight:bold">Most Popular Days - 2015 </caption> <thead> <tr> <th>Days</th> <th>Rides</th>  </tr> </thead> <tbody> <tr> <td>Tuesday</td> <td>60517</td> </tr> <tr> <td>Wednesday</td> <td>59414</td> </tr> <tr> <td>Monday</td> <td>57820</td></tr><tr> <td>Thursday</td><td>57324</td> </tr><tr> <td>Friday</td><td>52616</td> </tr> </tbody> </table>
   </div>
 
   <div data-role="footer" data-theme="b" style="text-align:center;">
@@ -533,6 +660,33 @@
 
         </ul>
       </ul>
+    </div>
+  </div>
+
+  <div data-role="page" id="endingStations">
+    <div data-role="header" data-theme="b">
+      <a href="#myPanel1" class="ui-btn ui-icon-grid ui-btn-icon-left">Menu</a>
+      <h1>Bike Share App</h1>
+      <a href="#myPanel2" class="ui-btn ui-icon-gear ui-btn-icon-left">Settings</a>
+      <div data-role="navbar">
+        <ul>
+          <li><a href="#startingStations" data-transition="slide">Staring</a></li>
+          <li><a href="#endingStations" data-transition="slide">Ending</a></li>
+          <li><a href="#startingRoutes" data-transition="slide">Routes</a></li>
+          <li><a href="#popularHours" data-transition="slide">Hours</a></li>
+          <li><a href="#popularDays" data-transition="slide">Days</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div data-role="main" class="ui-content">
+      <div id="mostEndingStations"></div>
+    </div>
+
+    <div data-role="footer" data-theme="b" style="text-align:center;">
+      <div data-role="controlgroup" data-type="horizontal">
+        Copyrights&#169Team 5 Smart City
+      </div>
     </div>
   </div>
 

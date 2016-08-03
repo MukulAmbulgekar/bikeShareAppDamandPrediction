@@ -46,7 +46,7 @@ function plotClusterMonths() {
 		},
 
 		title: {
-			text: 'Station clustering based on Month and Trips - 2015'
+			text: 'Months clustering based on trips - 2015'
 		},
 		subtitle: {
 			text: 'K-Means Clustering'
@@ -79,7 +79,7 @@ function plotClusterMonths() {
 		},
 		series: [{
 			data: clusterMonths1,
-			name: 'Medium Demand Months Usage Stations',
+			name: 'Medium Demand Months',
 			marker: {
 				radius: 12,
 				fillColor: {
@@ -96,7 +96,7 @@ function plotClusterMonths() {
 			}
 		}, {
 			data: clusterMonths2,
-			name: 'High Demand Months Usage Stations',
+			name: 'High Demand Months',
 			marker: {
 				radius: 12,
 				fillColor: {
@@ -113,7 +113,7 @@ function plotClusterMonths() {
 			}
 		}, {
 			data: clusterMonths3,
-			name: 'Low Demand Months Usage Stations',
+			name: 'Low Demand Months',
 			marker: {
 				radius: 12,
 				fillColor: {

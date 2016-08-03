@@ -399,7 +399,7 @@
           map.setZoom(14);
           map.addMarker({
             position: results[0].geometry.location,
-            'title': 'Address - ' + address + ' \nTotal Stations (within 0.5 ' + (defaultDistance === 'M' ? 'Miles' : 'KMs') + ') - ' + nearByStations + '\nNearest station - ' + nearestStation.name + ' at ' + nearestStation.distance + ' ' + (defaultDistance === 'M' ? 'Miles' : 'KMs'),
+            'title': 'Address - ' + address + ' \nTotal Stations (within 0.5 ' + (defaultDistance === 'M' ? 'Miles' : 'KMs') + ') : ' + nearByStations + '\nNearest station - ' + nearestStation.name + ' at ' + nearestStation.distance + ' ' + (defaultDistance === 'M' ? 'Miles' : 'KMs'),
             icon: 'red',
             'styles': {
               'font-weight': 'bold',
@@ -411,6 +411,7 @@
               marker.showInfoWindow();
             },
           }, function(marker) {
+            marker.showInfoWindow();
             gmarkers.push(marker);
             marker.addEventListener(plugin.google.maps.event.INFO_CLICK, function() {
               navigateToBikeStation(new plugin.google.maps.LatLng(latitude, longitude), nearestStation.location, nearestStation.name);
@@ -484,7 +485,7 @@
     function addCurrentLocationMarker(positionParams) {
       map.addMarker({
         position: positionParams,
-        'title': 'Total Stations (within 0.5 ' + (defaultDistance === 'M' ? 'Miles' : 'KMs') + ') - ' + nearByStations + '\nNearest station - ' + nearestStation.name + ' at ' + nearestStation.distance + ' ' + (defaultDistance === 'M' ? 'Miles' : 'KMs'),
+        'title': 'Total Stations (within 0.5 ' + (defaultDistance === 'M' ? 'Miles' : 'KMs') + ') : ' + nearByStations + '\nNearest station - ' + nearestStation.name + ' at ' + nearestStation.distance + ' ' + (defaultDistance === 'M' ? 'Miles' : 'KMs'),
         icon: 'red',
         'styles': {
           'font-weight': 'bold',
@@ -497,6 +498,7 @@
         },
       }, function(marker) {
         gmarkers.push(marker);
+        marker.showInfoWindow();
         marker.addEventListener(plugin.google.maps.event.INFO_CLICK, function() {
           navigateToBikeStation(new plugin.google.maps.LatLng(latitude, longitude), nearestStation.location, nearestStation.name);
         });

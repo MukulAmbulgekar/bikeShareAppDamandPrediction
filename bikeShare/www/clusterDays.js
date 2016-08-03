@@ -37,7 +37,7 @@ function plotClusterDays() {
 			zoomType: 'xy'
 		},
 		title: {
-			text: 'Station clustering based on WeekDay/Weekend and Trips - 2015'
+			text: 'Days clustering based on trips - 2015'
 		},
 		subtitle: {
 			text: 'K-Means Clustering'
@@ -69,7 +69,7 @@ function plotClusterDays() {
 			}
 		},
 		series: [{
-			name: 'Weekday Usage Stations',
+			name: 'Weekday Usage',
 			data: clusterDays1,
 			marker: {
 				radius: 15,
@@ -86,7 +86,7 @@ function plotClusterDays() {
 				}
 			}
 		}, {
-			name: 'Weekend Usage Stations',
+			name: 'Weekend Usage',
 			data: clusterDays2,
 			marker: {
 				radius: 12,

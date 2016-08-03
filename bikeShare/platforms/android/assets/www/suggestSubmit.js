@@ -54,13 +54,19 @@ function suggestStation() {
 
 function plotBikeStations(latlng) {
   $.getJSON('http://www.bayareabikeshare.com/stations/json', function(data) {
-    _.forEach(data.stationBeanList, function(eachStation) {
-      L.marker(L.latLng(eachStation.latitude, eachStation.longitude), {
-          icon: iconMarker
-        }).addTo(map_suggest)
-        .bindPopup("<b style='color:blue'>" + eachStation.stationName + ' - ' + eachStation.landMark + "</b>").openPopup();
-    });
-     map_suggest.setView(latlng, 16);
+    $.getJSON('suggestStations.json', function(suggested) {
+      _.forEach(data.stationBeanList, function(eachStation) {
+        L.marker(L.latLng(eachStation.latitude, eachStation.longitude), {
+            icon: iconMarker
+          }).addTo(map_suggest)
+          .bindPopup("<b style='color:blue'>" + eachStation.stationName + ' - ' + eachStation.landMark + "</b>").openPopup();
+      });
+      _.forEach(suggested, function(suggestedStation) {
+        L.marker(L.latLng(suggestedStation.lat, suggestedStation.lng)).addTo(map_suggest)
+          .bindPopup("<b style='color:red'>Suggested Bike Station</b>").openPopup();
+      });
+      map_suggest.setView(latlng, 16);
+    })
   })
 }
 

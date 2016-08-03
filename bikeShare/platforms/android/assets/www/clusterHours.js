@@ -36,7 +36,7 @@ $('#clusterHours').highcharts({
 		zoomType: 'xy'
 	},
 	title: {
-		text: 'Station clustering based on hour of the day and Trips - 2015'
+		text: 'Hours clustering based on trips - 2015'
 	},
 	subtitle: {
 		text: 'K-Means Clustering'
@@ -81,15 +81,15 @@ $('#clusterHours').highcharts({
 		}
 	},
 	series: [{
-		name: 'Low Demand Hours Usage Stations',
+		name: 'Low Demand Hours',
 		color: 'rgba(255, 0, 0, .5)',
 		data: clusterHours1
 	}, {
-		name: 'Average Demand Hours Usage Stations',
+		name: 'Average Demand Hours',
 		color: 'rgba(0, 255, 0, .5)',
 		data: clusterHours2
 	}, {
-		name: 'Peak Demand Hours Usage Stations',
+		name: 'Peak Demand Hours',
 		color: 'rgba(0, 0, 255, .5)',
 		data: clusterHours3
 	}]

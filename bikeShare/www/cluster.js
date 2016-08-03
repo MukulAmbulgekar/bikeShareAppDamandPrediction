@@ -22,7 +22,7 @@ $('#clusterStations').highcharts({
 		zoomType: 'xy'
 	},
 	title: {
-		text: 'Station clustering based on trips served - 2015'
+		text: 'Station Clustering based on trips - 2015'
 	},
 	subtitle: {
 		text: 'K-Means Clustering'
