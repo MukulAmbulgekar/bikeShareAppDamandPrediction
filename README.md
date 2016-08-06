@@ -6,19 +6,21 @@ Also we are going to implement demand prediction based on historical data.
 
 ### Things that are done ###
 
-*  Find nearby bike stations (within 0.5 miles) and their avalability
+Mobile Application
+
+*  Find nearby bike stations (within 0.5 miles) and their avalability. (Cities included - Bay area, Chicago, New York)
 *  Get real time status of available Bikes/Docks at a particular bike station
 *  Get weather information
 *  Search places on google maps to get bike status.
 *  Suggest new Bike Stations
-* K-Means Clustering for stations based on number of trips
-* Added demand prediction for number of trips on hourly basis using Gradient Boosting. 
-* Added demand prediction for number of trips on hourly basis using Random Forest. 
 
-** Features to be implemented **
-* Demand prediction Algorithm
-* Big data analysis  - web dashboard
-* Android Mobile Application for real time analysis and status of bike stations 
+Web Application 
+
+*  K-Means Clustering for stations based on number of trips
+*  Added demand prediction for number of trips on hourly basis for last one year using Gradient Boosting, Random Forest, Ada Boosting and Extra Trees Regressor. 
+*  Added demand prediction for number of bike availability for last one year on hourly basis using Gradient Boosting, Random Forest, Ada Boosting and Extra Trees Regressor. 
+*  Added future demand prediction using gradient boosting algorithm as it was giving best results for given data set.
+
 
 
 ### How do I get set up? ###
@@ -35,7 +37,7 @@ Also we are going to implement demand prediction based on historical data.
 
 **Sample screenshots of Application**
 
-![Screenshot_20160626-180638.jpg](https://bitbucket.org/repo/LpbXRr/images/513438713-Screenshot_20160626-180638.jpg)
+![Screenshot_20160626-180638.jpg](https://bitbucket.org/repo/LpbXRr/images/513438713-Screenshot_20160626-180638.jpg width="48")
 
 ![Screenshot_20160710-151640.jpg](https://bitbucket.org/repo/LpbXRr/images/272707689-Screenshot_20160710-151640.jpg)
 
@@ -54,29 +56,29 @@ Station Cluster
 Hourly Clustering
 ![HoursCluster.png](https://bitbucket.org/repo/LpbXRr/images/3246384951-HoursCluster.png)
 
-Gradient Boosting
-![DemandPredictionGB.jpeg](https://bitbucket.org/repo/LpbXRr/images/4085174765-DemandPredictionGB.jpeg)
 
-Random Forest
+DemandPredictionDashboard
 
-![DemandPredictionRandomForest.png](https://bitbucket.org/repo/LpbXRr/images/2741760046-DemandPredictionRandomForest.png)
+![PredictionDashoboard.png](https://bitbucket.org/repo/LpbXRr/images/1325917692-PredictionDashoboard.png)
 
 DemandPredictionDashboard - Trips
 
-![TripsPredictionDashboard.png](https://bitbucket.org/repo/LpbXRr/images/809193236-TripsPredictionDashboard.png)
+![TripsPrediction.png](https://bitbucket.org/repo/LpbXRr/images/3962446731-TripsPrediction.png)
 
 DemandPredictionDashboard - Availability
 
-![AvalabilityPrediction.png](https://bitbucket.org/repo/LpbXRr/images/2109473631-AvalabilityPrediction.png)
+![BikeAvailabilityPrediction.png](https://bitbucket.org/repo/LpbXRr/images/196978163-BikeAvailabilityPrediction.png)
 
 Future prediction for number of trips based on month, type of day(weekday/weekend), temp, rain etc.
 
-![FutureDemandPrediction.png](https://bitbucket.org/repo/LpbXRr/images/999112961-FutureDemandPrediction.png)
+![FuturePredictionTrips.png](https://bitbucket.org/repo/LpbXRr/images/3403255491-FuturePredictionTrips.png)
 
 
-Dashboard 
+Data Analytics Dashboard 
 
 ![Dashoboard.png](https://bitbucket.org/repo/LpbXRr/images/2119886499-Dashoboard.png)
+
+![snapshotView.jpg](https://bitbucket.org/repo/LpbXRr/images/236357036-snapshotView.jpg)
 
 Data Visualization Weekday
 
