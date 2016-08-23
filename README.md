@@ -87,9 +87,3 @@ Data Visualization Weekday
 Data Visualization Weekend
 ![dataVisualizationWeekend.jpg](https://bitbucket.org/repo/LpbXRr/images/2669415847-dataVisualizationWeekend.jpg)
 
-
-**Team**
-
-* Mukul Ambulgekar
-* Akshay Jarandikar
-* Swati Mittal
