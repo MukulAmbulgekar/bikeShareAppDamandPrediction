@@ -38,32 +38,46 @@ Web Application
 **Sample screenshots of Application**
 
 ![Mobile Application]  (https://raw.githubusercontent.com/MukulAmbulgekar/bikeShareAppDamandPrediction/master/bikeshareScreenshots/app1.jpg)
+
 ![Mobile Application]
 (https://raw.githubusercontent.com/MukulAmbulgekar/bikeShareAppDamandPrediction/master/bikeshareScreenshots/app2.jpg)
+
 ![Mobile Application]
 (https://raw.githubusercontent.com/MukulAmbulgekar/bikeShareAppDamandPrediction/master/bikeshareScreenshots/app3.jpg)
+
 ![Mobile Application]
 (https://raw.githubusercontent.com/MukulAmbulgekar/bikeShareAppDamandPrediction/master/bikeshareScreenshots/app4.jpg)
+
 ![Mobile Application]
 (https://raw.githubusercontent.com/MukulAmbulgekar/bikeShareAppDamandPrediction/master/bikeshareScreenshots/app5.png)
+
 ![Mobile Application]
 (https://raw.githubusercontent.com/MukulAmbulgekar/bikeShareAppDamandPrediction/master/bikeshareScreenshots/app6.jpg)
+
 ![Mobile Application]
 (https://raw.githubusercontent.com/MukulAmbulgekar/bikeShareAppDamandPrediction/master/bikeshareScreenshots/app7.png)
+
 ![Mobile Application]
 (https://raw.githubusercontent.com/MukulAmbulgekar/bikeShareAppDamandPrediction/master/bikeshareScreenshots/app8.png)
+
 ![Mobile Application]
 (https://raw.githubusercontent.com/MukulAmbulgekar/bikeShareAppDamandPrediction/master/bikeshareScreenshots/app9.png)
+
 ![Mobile Application]
 (https://raw.githubusercontent.com/MukulAmbulgekar/bikeShareAppDamandPrediction/master/bikeshareScreenshots/app10.jpg)
+
 ![Mobile Application]
 (https://raw.githubusercontent.com/MukulAmbulgekar/bikeShareAppDamandPrediction/master/bikeshareScreenshots/app11.png)
+
 ![Mobile Application]
 (https://raw.githubusercontent.com/MukulAmbulgekar/bikeShareAppDamandPrediction/master/bikeshareScreenshots/app12.png)
+
 ![Mobile Application]
 (https://raw.githubusercontent.com/MukulAmbulgekar/bikeShareAppDamandPrediction/master/bikeshareScreenshots/app13.jpg)
+
 ![Mobile Application]
 (https://raw.githubusercontent.com/MukulAmbulgekar/bikeShareAppDamandPrediction/master/bikeshareScreenshots/app14.png)
+
 ![Mobile Application]
 (https://raw.githubusercontent.com/MukulAmbulgekar/bikeShareAppDamandPrediction/master/bikeshareScreenshots/app15.png)
 
