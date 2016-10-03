@@ -37,53 +37,34 @@ Web Application
 
 **Sample screenshots of Application**
 
-![Screenshot_20160626-180638.jpg](https://bitbucket.org/repo/LpbXRr/images/513438713-Screenshot_20160626-180638.jpg width="48")
+![Mobile Application]  (https://raw.githubusercontent.com/MukulAmbulgekar/bikeShareAppDamandPrediction/master/bikeshareScreenshots/app1.jpg)
+![Mobile Application]
+(https://raw.githubusercontent.com/MukulAmbulgekar/bikeShareAppDamandPrediction/master/bikeshareScreenshots/app2.jpg)
+![Mobile Application]
+(https://raw.githubusercontent.com/MukulAmbulgekar/bikeShareAppDamandPrediction/master/bikeshareScreenshots/app3.jpg)
+![Mobile Application]
+(https://raw.githubusercontent.com/MukulAmbulgekar/bikeShareAppDamandPrediction/master/bikeshareScreenshots/app4.jpg)
+![Mobile Application]
+(https://raw.githubusercontent.com/MukulAmbulgekar/bikeShareAppDamandPrediction/master/bikeshareScreenshots/app5.png)
+![Mobile Application]
+(https://raw.githubusercontent.com/MukulAmbulgekar/bikeShareAppDamandPrediction/master/bikeshareScreenshots/app6.jpg)
+![Mobile Application]
+(https://raw.githubusercontent.com/MukulAmbulgekar/bikeShareAppDamandPrediction/master/bikeshareScreenshots/app7.png)
+![Mobile Application]
+(https://raw.githubusercontent.com/MukulAmbulgekar/bikeShareAppDamandPrediction/master/bikeshareScreenshots/app8.png)
+![Mobile Application]
+(https://raw.githubusercontent.com/MukulAmbulgekar/bikeShareAppDamandPrediction/master/bikeshareScreenshots/app9.png)
+![Mobile Application]
+(https://raw.githubusercontent.com/MukulAmbulgekar/bikeShareAppDamandPrediction/master/bikeshareScreenshots/app10.jpg)
+![Mobile Application]
+(https://raw.githubusercontent.com/MukulAmbulgekar/bikeShareAppDamandPrediction/master/bikeshareScreenshots/app11.png)
+![Mobile Application]
+(https://raw.githubusercontent.com/MukulAmbulgekar/bikeShareAppDamandPrediction/master/bikeshareScreenshots/app12.png)
+![Mobile Application]
+(https://raw.githubusercontent.com/MukulAmbulgekar/bikeShareAppDamandPrediction/master/bikeshareScreenshots/app13.jpg)
+![Mobile Application]
+(https://raw.githubusercontent.com/MukulAmbulgekar/bikeShareAppDamandPrediction/master/bikeshareScreenshots/app14.png)
+![Mobile Application]
+(https://raw.githubusercontent.com/MukulAmbulgekar/bikeShareAppDamandPrediction/master/bikeshareScreenshots/app15.png)
 
-![Screenshot_20160710-151640.jpg](https://bitbucket.org/repo/LpbXRr/images/272707689-Screenshot_20160710-151640.jpg)
-
-![Screenshot_20160710-151702.jpg](https://bitbucket.org/repo/LpbXRr/images/2543461093-Screenshot_20160710-151702.jpg)
-
-![Screenshot_20160710-151734.jpg]
-(https://bitbucket.org/repo/LpbXRr/images/3886778214-Screenshot_20160710-151734.jpg)
-
-![Screenshot_20160626-180551.png]
-(https://bitbucket.org/repo/LpbXRr/images/2895305956-Screenshot_20160626-180551.png)
-
-Station Cluster
-
-![stationsCluster.png](https://bitbucket.org/repo/LpbXRr/images/1371861325-stationsCluster.png)
-
-Hourly Clustering
-![HoursCluster.png](https://bitbucket.org/repo/LpbXRr/images/3246384951-HoursCluster.png)
-
-
-DemandPredictionDashboard
-
-![PredictionDashoboard.png](https://bitbucket.org/repo/LpbXRr/images/1325917692-PredictionDashoboard.png)
-
-DemandPredictionDashboard - Trips
-
-![TripsPrediction.png](https://bitbucket.org/repo/LpbXRr/images/3962446731-TripsPrediction.png)
-
-DemandPredictionDashboard - Availability
-
-![BikeAvailabilityPrediction.png](https://bitbucket.org/repo/LpbXRr/images/196978163-BikeAvailabilityPrediction.png)
-
-Future prediction for number of trips based on month, type of day(weekday/weekend), temp, rain etc.
-
-![FuturePredictionTrips.png](https://bitbucket.org/repo/LpbXRr/images/3403255491-FuturePredictionTrips.png)
-
-
-Data Analytics Dashboard 
-
-![Dashoboard.png](https://bitbucket.org/repo/LpbXRr/images/2119886499-Dashoboard.png)
-
-![snapshotView.jpg](https://bitbucket.org/repo/LpbXRr/images/236357036-snapshotView.jpg)
-
-Data Visualization Weekday
-
-![dataVisualization.jpg](https://bitbucket.org/repo/LpbXRr/images/960626874-dataVisualization.jpg)
-
-Data Visualization Weekend
-![dataVisualizationWeekend.jpg](https://bitbucket.org/repo/LpbXRr/images/2669415847-dataVisualizationWeekend.jpg)
 
